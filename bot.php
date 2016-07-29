@@ -17,7 +17,7 @@ $string = json_decode(file_get_contents('php://input'));
     $user_id = $result['message']['from']['id'];
     $text = $result['message']['text'];
     $token = '';
-    $text_reply = 'پیام شما دریافت شد.';
+    $text_reply = 'bashe';
     
     $url = 'https://api.telegram.org/bot'.$token.'/sendMessage?chat_id='.$user_id;
     $url .= '&text=' .$text_reply;
