@@ -63,11 +63,11 @@ $string = json_decode(file_get_contents('php://input'));
       			$text_reply = $arr[0].' استاد میفرمایند زر مفت نزن ';  
       		else if($arr[1] == 'چرت')
       			$text_reply = $arr[0].' استاد میفرمایند چرت نگو ';  
-      		else if(strpos($arr[1], 'باهات') && strpos($arr[2], 'موافقم'))
+      		else if(strpos($arr[1], 'باهات')!==false && strpos($arr[2], 'موافقم')!==false&&!(strpos($arr[0], 'من')!==false))
       			$text_reply = $arr[0].' استاد '.$arr[1].' موافقه ';  
       		else if(strpos($arr[0], 'استا')!==false)
       			$text_reply = ' استاعاعاعاعاااااادد ';  
- 		else
+ 		else	
 	      		$text_reply = '';
 	}
 	else
