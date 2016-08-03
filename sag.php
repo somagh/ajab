@@ -39,7 +39,7 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'گذاشت*';
 		$reply=$result['message']['message_id'];
 	}
-	else if($result['message']['from']['id']=="121259997"&&rand(12,27)==12)
+	else if($result['message']['from']['id']=="121259997"&&rand(12,25)==12)
 	{
 		$text_reply = '<b>وز زر مفت نزن</b>';
 		$reply=$result['message']['message_id'];
@@ -52,25 +52,36 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = '🎤🎤🎤<i>پی ننه کو؟ پی ننه کو؟ پی ننه پی ننه پی ننه کو؟</i>🎤🎤🎤';
 	else if(strpos($text, 'وزننه') !== false)
 		$text_reply = 'وزننه نسخه جدید پی ننه';
-	else if($result['message']['from']['username']=="aryakowsary" || $result['message']['from']['username']=="A_H_P_A" ||$result['message']['from']['username']=="kianoosh76")
+	else if($result['message']['from']['username']=="aryakowsary" || $result['message']['from']['username']=="A_H_P_A")
 	{
 		$arr = explode(" ", $text);
-	    	if($arr[1] == 'ساکت' || $arr[1] == 'خفه')
-	      		$text_reply = $arr[0].' استاد میفرمایند '.$arr[1];  
-      		else if(strpos($arr[1], 'زر') !== false	)
-      			$text_reply = $arr[0].' استاد میفرمایند زر مفت نزن ';  
-      		else if($arr[1] == 'چرت')
-      			$text_reply = $arr[0].' استاد میفرمایند چرت نگو ';  
++	    	if($arr[1] == 'ساکت' || $arr[1] == 'خفه')
++	      		$text_reply = $arr[0].' استاد میفرمایند '.$arr[1];  
++      		else if(strpos($arr[1], 'زر') !== false	)
++      			$text_reply = $arr[0].' استاد میفرمایند زر مفت نزن ';  
++      		else if($arr[1] == 'چرت')
++      			$text_reply = $arr[0].' استاد میفرمایند چرت نگو ';  
++      		else if(strpos($arr[1], 'باهات') && strpos($arr[2], 'موافقم'))
++      			$text_reply = $arr[0].' استاد '.$arr[1].' موافقه ';  
++      		else if(strpos($arr[0], 'استا'))
++      			$text_reply = ' استاعاعاعاعاااااادد ';  
  		else
-	      		$text_reply = '';
++	      		$text_reply = '';
 	}
 	else
 	{
-		$text_reply = '';
-		if(rand(1,100)==20)
+		if((strpos($arr, 'پویا') || strpos($arr, 'آریا') || strpos($arr, 'کیانوش')) && (strpos($arr, 'زر نزن') || strpos($arr, 'خفه شو') ||strpos($arr, 'چرت نگو'))){
+			$text_reply='خودت زر نزن ';
+			$reply=$result['message']['message_id'];
+		}
+		else
 		{
-		$text_reply = $result['message']['from']['first_name'].' zer nazan';
-		$reply=$result['message']['message_id'];
+			$text_reply = '';
+			if(rand(1,100)==20)
+			{
+			$text_reply = $result['message']['from']['first_name'].' zer nazan';
+			$reply=$result['message']['message_id'];
+			}
 		}
 	}
 	$xml = file_get_contents("http://requestb.in/1b31zb21");
