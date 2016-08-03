@@ -54,7 +54,7 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'وزننه نسخه جدید پی ننه';
 	else if($result['message']['from']['username']=="aryakowsary")
 		$text_reply = '';
-	else if($user_id!==-20025983)
+	else if()
 	{
 		$text_reply = '';
 		if(rand(1,100)==20)
