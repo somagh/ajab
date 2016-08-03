@@ -27,6 +27,11 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply='این دستور فیک است اه';
 		$reply=$result['message']['message_id'];
 	}
+	else if(strpos($result['message']['entities'][0]['type'],'bot_command')!==false)
+	{
+		$text_reply='دست آورد های تقریبی برجام';
+		$reply=$result['message']['message_id'];
+	}// کامند ها
 	else if(strpos($text, 'بزار') !== false)
 	{
 		$text_reply = 'بذار*';
@@ -41,7 +46,27 @@ $string = json_decode(file_get_contents('php://input'));
 	{
 		$text_reply = 'گذاشت*';
 		$reply=$result['message']['message_id'];
-	}
+	}// بذار
+	else if(strpos($text, 'گاها') !== false || strpos($text, 'گاهن') !== false || strpos($text, 'خواهشن') !== false || strpos($text, 'خواهشا') !== false)
+	{
+		$text_reply = 'بر سر کلمات فارسی تنوین می گذارند. بی حیاها';
+		$reply=$result['message']['message_id'];
+	}// تنوین
+	else if(strpos($text, 'حتا') !== false)
+	{
+		$text_reply = '*حتی';
+		$reply=$result['message']['message_id'];
+	}// حتی	
+	else if(strpos($text, 'MPT') !== false || strpos($text, 'M.P.T.') !== false || strpos($text, 'ام پی تی') !== false || strpos($text, 'ام.پی.تی') !== false)
+	{
+		$text_reply = 'استاد کریمی قدوسی';
+		$reply=$result['message']['message_id'];
+	}// جواد	
+	else if(strpos($text, 'خوانواده') !== false)
+	{
+		$text_reply = 'خانواده';
+		$reply=$result['message']['message_id'];
+	}// خوا استثنا
 	else if($result['message']['from']['id']=="121259997"&&rand(12,25)==12)
 	{
 		$text_reply = '<b>وز زر مفت نزن</b>';
@@ -53,6 +78,8 @@ $string = json_decode(file_get_contents('php://input'));
 	}
 	else if(strpos($text, 'پی ننه') !== false||strpos($text, 'pnane') !== false||strpos($text, 'پي ننه') !== false||strpos($text, 'پیننه') !== false)
 		$text_reply = '🎤🎤🎤<i>پی ننه کو؟ پی ننه کو؟ پی ننه پی ننه پی ننه کو؟</i>🎤🎤🎤';
+	else if(strpos($text, 'بکتاش') !== false||strpos($text, 'baktash') !== false)
+		$text_reply = '🎤🎤🎤<i>بکتاش آفت شهپر مهوش پریوش چه بد کرد غلط کرد شوهر کرد همه رو در به در کرد</i>🎤🎤🎤';
 	else if(strpos($text, 'وزننه') !== false)
 		$text_reply = 'وزننه نسخه جدید پی ننه';
 	else if(strpos($text, 'استا')!==false)
