@@ -52,17 +52,17 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = '🎤🎤🎤<i>پی ننه کو؟ پی ننه کو؟ پی ننه پی ننه پی ننه کو؟</i>🎤🎤🎤';
 	else if(strpos($text, 'وزننه') !== false)
 		$text_reply = 'وزننه نسخه جدید پی ننه';
-	else if($result['message']['from']['username']=="aryakowsary" || $result['message']['from']['username']=="A_H_P_A"||$result['message']['from']['username']=="kianoosh76")
+	else if($result['message']['from']['username']=="aryakowsary" || $result['message']['from']['username']=="A_H_P_A" ||$result['message']['from']['username']=="kianoosh76")
 	{
 		$arr = explode(" ", $text);
-+	    	if($arr[1] == 'ساکت' || $arr[1] == 'خفه')
-+	      		$text_reply = $arr[0].' استاد میفرمایند '.$arr[1];  
-+      		else if(strpos($arr[1], 'زر') !== false	)
-+      			$text_reply = $arr[0].' استاد میفرمایند زر مفت نزن ';  
-+      		else if($arr[1] == 'چرت')
-+      			$text_reply = $arr[0].' استاد میفرمایند چرت نگو ';  
+	    	if($arr[1] == 'ساکت' || $arr[1] == 'خفه')
+	      		$text_reply = $arr[0].' استاد میفرمایند '.$arr[1];  
+      		else if(strpos($arr[1], 'زر') !== false	)
+      			$text_reply = $arr[0].' استاد میفرمایند زر مفت نزن ';  
+      		else if($arr[1] == 'چرت')
+      			$text_reply = $arr[0].' استاد میفرمایند چرت نگو ';  
  		else
-+	      		$text_reply = '';
+	      		$text_reply = '';
 	}
 	else
 	{
