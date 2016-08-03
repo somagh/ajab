@@ -55,10 +55,14 @@ $string = json_decode(file_get_contents('php://input'));
 	else if($result['message']['from']['username']=="aryakowsary" || $result['message']['from']['username']=="A_H_P_A")
 	{
 		$arr = explode(" ", $text);
-    	if($arr[1] == 'ساکت' )
-      		$text_reply = $arr[0].' استاد میفرمایند ساکت ';  
-		else
-	      	$text_reply = '';
++	    	if($arr[1] == 'ساکت' || $arr[1] == 'خفه')
++	      		$text_reply = $arr[0].' استاد میفرمایند '.$arr[1];  
++      		else if(strpos($arr[1], 'زر') !== false	)
++      			$text_reply = $arr[0].' استاد میفرمایند زر مفت نزن ';  
++      		else if($arr[1] == 'چرت')
++      			$text_reply = $arr[0].' استاد میفرمایند چرت نگو ';  
+ 		else
++	      		$text_reply = '';
 	}
 	else
 	{
