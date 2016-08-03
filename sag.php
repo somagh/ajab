@@ -15,10 +15,13 @@ $string = json_decode(file_get_contents('php://input'));
         }
         return array_map( 'objectToArray', $object );
     }
+	
     $token='99331505:AAEQcTOdUSAPxN2d8tYOd-_DTjtg49EgV5k';
     $result = objectToArray($string);
     $user_id = $result['message']['chat']['id'];
     $text = $result['message']['text'];
+	
+		$arr = explode(" ", $text);
 	if(strpos($result['message']['entities'][0]['type'],'bot_command')!==false)
 	{
 		$text_reply='این دستور فیک است اه';
@@ -48,29 +51,28 @@ $string = json_decode(file_get_contents('php://input'));
 	{
 		$text_reply = 'vez ostad '.$result['message']['from']['first_name'].' mifarmayand zer moft nazan';
 	}
-	else if(strpos($text, 'پی ننه') !== false||strpos($text, 'pnane') !== false||strpos($text, 'پي ننه') !== false||strpos($text, 'پيننه') !== false)
+	else if(strpos($text, 'پی ننه') !== false||strpos($text, 'pnane') !== false||strpos($text, 'پي ننه') !== false||strpos($text, 'پیننه') !== false)
 		$text_reply = '🎤🎤🎤<i>پی ننه کو؟ پی ننه کو؟ پی ننه پی ننه پی ننه کو؟</i>🎤🎤🎤';
 	else if(strpos($text, 'وزننه') !== false)
 		$text_reply = 'وزننه نسخه جدید پی ننه';
 	else if($result['message']['from']['username']=="aryakowsary" || $result['message']['from']['username']=="A_H_P_A")
 	{
-		$arr = explode(" ", $text);
-+	    	if($arr[1] == 'ساکت' || $arr[1] == 'خفه')
-+	      		$text_reply = $arr[0].' استاد میفرمایند '.$arr[1];  
-+      		else if(strpos($arr[1], 'زر') !== false	)
-+      			$text_reply = $arr[0].' استاد میفرمایند زر مفت نزن ';  
-+      		else if($arr[1] == 'چرت')
-+      			$text_reply = $arr[0].' استاد میفرمایند چرت نگو ';  
-+      		else if(strpos($arr[1], 'باهات') && strpos($arr[2], 'موافقم'))
-+      			$text_reply = $arr[0].' استاد '.$arr[1].' موافقه ';  
-+      		else if(strpos($arr[0], 'استا'))
-+      			$text_reply = ' استاعاعاعاعاااااادد ';  
+	    	if($arr[1] == 'ساکت' || $arr[1] == 'خفه')
+	      		$text_reply = $arr[0].' استاد میفرمایند '.$arr[1];  
+      		else if(strpos($arr[1], 'زر') !== false	)
+      			$text_reply = $arr[0].' استاد میفرمایند زر مفت نزن ';  
+      		else if($arr[1] == 'چرت')
+      			$text_reply = $arr[0].' استاد میفرمایند چرت نگو ';  
+      		else if(strpos($arr[1], 'باهات') && strpos($arr[2], 'موافقم'))
+      			$text_reply = $arr[0].' استاد '.$arr[1].' موافقه ';  
+      		else if(strpos($arr[0], 'استا')!==false)
+      			$text_reply = ' استاعاعاعاعاااااادد ';  
  		else
-+	      		$text_reply = '';
+	      		$text_reply = '';
 	}
 	else
 	{
-		if((strpos($arr, 'پویا') || strpos($arr, 'آریا') || strpos($arr, 'کیانوش')) && (strpos($arr, 'زر نزن') || strpos($arr, 'خفه شو') ||strpos($arr, 'چرت نگو'))){
+		if((strpos($text, 'پویا')!==false || strpos($text, 'آریا')!==false || strpos($text, 'کیانوش')!==false) && (strpos($text, 'زر نزن')!==false || strpos($text, 'خفه شو')!==false ||strpos($text, 'چرت نگو')!==false||strpos($text, 'ساکت')!==false)){
 			$text_reply='خودت زر نزن ';
 			$reply=$result['message']['message_id'];
 		}
@@ -84,7 +86,6 @@ $string = json_decode(file_get_contents('php://input'));
 			}
 		}
 	}
-	$xml = file_get_contents("http://requestb.in/1b31zb21");
     $url = 'https://api.telegram.org/bot'.$token.'/sendMessage?chat_id='.$user_id;
     $url .= '&text=' .$text_reply;
 	$url .= '&reply_to_message_id=' .$reply;
