@@ -39,7 +39,7 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'گذاشت*';
 		$reply=$result['message']['message_id'];
 	}
-	else if($result['message']['from']['id']=="121259997"&&rand(12,32)==12)
+	else if($result['message']['from']['id']=="121259997"&&rand(12,27)==12)
 	{
 		$text_reply = '<b>وز زر مفت نزن</b>';
 		$reply=$result['message']['message_id'];
