@@ -67,11 +67,13 @@ $string = json_decode(file_get_contents('php://input'));
       			$text_reply = $arr[0].' استاد میفرمایند چرت نگو ';  
       		else if(strpos($arr[1], 'باهات')!==false && strpos($arr[2], 'موافقم')!==false&&!(strpos($arr[0], 'من')!==false))
       			$text_reply = $arr[0].' استاد '.$arr[1].' موافقه ';  
-		      else if(strpos($text, 'خدا')!==false && strpos($text, 'لعنتت')!==false)
+		      else if(strpos($text, 'خدا')!==false && strpos($text, 'لعنتت')!==false&& $result['message']['reply_to_message']['message_id']!=0)
 			  {
 				$reply=$result['message']['reply_to_message']['message_id'];
-				if($reply!=0)
-      			$text_reply ="لعنت و نفرین جاودان خداوند بر تو باد";  
+				if(rand(1,2)==2)
+					$text_reply ="لعنت و نفرین جاودان خداوند بر تو باد";  
+				else
+					$text_reply ="خدا به زمین گرم بزنتت";
 			  }
 		
  		else	
