@@ -84,7 +84,7 @@ $string = json_decode(file_get_contents('php://input'));
 	else
 	{
 		if((strpos($text, 'پویا')!==false || strpos($text, 'آریا')!==false || strpos($text, 'کیانوش')!==false) && (strpos($text, 'زر نزن')!==false || strpos($text, 'خفه شو')!==false ||strpos($text, 'چرت نگو')!==false||strpos($text, 'ساکت')!==false)){
-			$text_reply='خودت زر نزن ';
+			$text_reply='چه خزعبلی واسه خودت بلغور میکنی ';
 			$reply=$result['message']['message_id'];
 		}
 		else
