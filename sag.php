@@ -39,9 +39,9 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'گذاشت*';
 		$reply=$result['message']['message_id'];
 	}
-	else if($result['message']['from']['id']=="121259997"&&rand(12,42)==12)
+	else if($result['message']['from']['id']=="121259997"&&rand(12,32)==12)
 	{
-		$text_reply = 'وز زر مفت نزن';
+		$text_reply = '<b>وز زر مفت نزن</b>';
 		$reply=$result['message']['message_id'];
 	}
 	else if(strpos($text, 'وز ساکت') !== false||strpos($text, 'وز ساکت') !== false)
@@ -49,12 +49,18 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'vez ostad '.$result['message']['from']['first_name'].' mifarmayand zer moft nazan';
 	}
 	else if(strpos($text, 'پی ننه') !== false||strpos($text, 'pnane') !== false||strpos($text, 'پي ننه') !== false)
-		$text_reply = 'پی ننه کو؟ پی ننه کو؟ پی ننه پی ننه پی ننه کو؟';
+		$text_reply = '🎤🎤🎤<i>پی ننه کو؟ پی ننه کو؟ پی ننه پی ننه پی ننه کو؟</i>🎤🎤🎤U+1F601';
 	else if(strpos($text, 'وزننه') !== false)
 		$text_reply = 'وزننه نسخه جدید پی ننه';
-	else if($result['message']['from']['username']=="aryakowsary")
-		$text_reply = '';
-	else if()
+	else if($result['message']['from']['username']=="aryakowsary" || $result['message']['from']['username']=="A_H_P_A")
+	{
+		$arr = explode(" ", $text);
+    	if($arr[1] == 'ساکت' )
+      		$text_reply = $arr[0].' استاد میفرمایند ساکت ';  
+		else
+	      	$text_reply = '';
+	}
+	else
 	{
 		$text_reply = '';
 		if(rand(1,100)==20)
@@ -67,6 +73,7 @@ $string = json_decode(file_get_contents('php://input'));
     $url = 'https://api.telegram.org/bot'.$token.'/sendMessage?chat_id='.$user_id;
     $url .= '&text=' .$text_reply;
 	$url .= '&reply_to_message_id=' .$reply;
+	$url .= '&parse_mode=html';
     $res = file_get_contents($url);
 	?>
 </body>
