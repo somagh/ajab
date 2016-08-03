@@ -34,39 +34,94 @@ $string = json_decode(file_get_contents('php://input'));
 	}// کامند ها
 	else if(strpos($text, 'بزار') !== false)
 	{
-		$text_reply = 'بذار*';
+		$text_reply = 'بذار* نوب سگ';
 		$reply=$result['message']['message_id'];
 	}
 	else if(strpos($text, 'میزار') !== false||strpos($text, 'می زار') !== false)
 	{
-		$text_reply = 'می ذار*';
+		$text_reply = 'می ذار* ای نوب';
 		$reply=$result['message']['message_id'];
 	}
 	else if(strpos($text, 'گزاشت') !== false)
 	{
-		$text_reply = 'گذاشت*';
+		$text_reply = 'گذاشت* ای نوب';
 		$reply=$result['message']['message_id'];
 	}// بذار
-	else if(strpos($text, 'گاها') !== false || strpos($text, 'گاهن') !== false || strpos($text, 'خواهشن') !== false || strpos($text, 'خواهشا') !== false)
+	else if(strpos($text, 'گاها') !== false || strpos($text, 'گاهن') !== false || strpos($text, 'خواهشن') !== false || strpos($text, 'خواهشا') !== false || strpos($text, 'دومن') !== false || strpos($text, 'دوما') !== false || strpos($text, 'سوما') !== false || strpos($text, 'سومن') !== false)
 	{
 		$text_reply = 'بر سر کلمات فارسی تنوین می گذارند. بی حیاها';
 		$reply=$result['message']['message_id'];
 	}// تنوین
+	else if(strpos($text, 'بر علیه') !== false||strpos($text, 'بر له') !== false)
+	{
+		$text_reply = 'آیا می دانستید \n bar is real?';
+		$reply=$result['message']['message_id'];
+	}//حشو
+	else if(strpos($text, 'اجالتن') !== false || strpos($text, 'اجالتا') !== false)
+	{
+		$text_reply = '*عجالتا';
+		$reply=$result['message']['message_id'];
+	}// عجالتا
 	else if(strpos($text, 'حتا') !== false)
 	{
-		$text_reply = '*حتی';
+		$text_reply = 'حتی یه کودن به تمام معنا هم بلده اینو درست بنویسه';
 		$reply=$result['message']['message_id'];
 	}// حتی	
-	else if(strpos($text, 'MPT') !== false || strpos($text, 'M.P.T.') !== false || strpos($text, 'ام پی تی') !== false || strpos($text, 'ام.پی.تی') !== false)
+	else if(strpos($text, 'انظباط') !== false || strpos($text, 'منظبط') !== false)
 	{
-		$text_reply = 'استاد کریمی قدوسی';
+		$text_reply = 'انضباط شرط لازمه نداشتن غلط املایی است. \n -امام فخیمه کیانوش';
+		$reply=$result['message']['message_id'];
+	}// انضباط	
+	else if(strpos($text, 'وحله') !== false)
+	{
+		$text_reply = 'شما در وهله اول برو املای کلماتو یاد بگیر بعد چت کن';
+		$reply=$result['message']['message_id'];
+	}// وهله
+	else if(strpos($text, 'متوصل') !== false || strpos($text, 'توصل') !== false)
+	{
+		$text_reply = 'از دست شما بی سوادان به خدای یکتا توسل می جویم.';
+		$reply=$result['message']['message_id'];
+	}// توسل
+	else if(strpos($text, 'انتفاع') !== false)
+	{
+		$text_reply = 'سواد خود را مورد انتفاء قرار ندهید';
+		$reply=$result['message']['message_id'];
+	}// توسل
+	else if(strpos($text, 'مذبور') !== false)
+	{
+		$text_reply = 'غلط املایی مزبور نشانه نوب سعگیه';
+		$reply=$result['message']['message_id'];
+	}// مزبور
+	else if(strpos($text, 'ترجیه') !== false)
+	{
+		$text_reply = 'ترجیح میدم به میزان حماقت پشت این غلط املایی فکر نکنم';
+		$reply=$result['message']['message_id'];
+	}// ترجیح
+	else if(strpos($text, 'توجیح') !== false)
+	{
+		$text_reply = 'این غلط املایی توجیه ناپذیره';
+		$reply=$result['message']['message_id'];
+	}// توجیه
+	else if(strpos($text, ' MPT') !== false || strpos($text, 'M.P.T.') !== false || strpos($text, 'ام پی تی') !== false || strpos($text, 'ام.پی.تی') !== false)
+	{
+		$text_reply = 'استاد کریمی قدوسی رو شاهد هستیم';
 		$reply=$result['message']['message_id'];
 	}// جواد	
 	else if(strpos($text, 'خوانواده') !== false)
 	{
-		$text_reply = 'خانواده';
+		$text_reply = 'تو بی استعدادی وگرنه خانوادگی که بی سواد نبودید.';
 		$reply=$result['message']['message_id'];
 	}// خوا استثنا
+	else if(strpos($text, 'گزارشات') !== false || strpos($text, 'آزمایشات') !== false || strpos($text, 'پیشنهادات') !== false || strpos($text, 'دستورات'))
+	{
+		$text_reply = 'ته کلمات فارسی ات نذارید. من نمی پسندم';
+		$reply=$result['message']['message_id'];
+	}// ات سر فارسی	
+	else if(strpos($text, 'بزنگ') !== false||strpos($text, 'زنگید') !== false||strpos($text, 'میزنگ') !== false||strpos($text, 'می زنگ') !== false)
+	{
+		$text_reply = 'بی سوااااددددد فارسی رو به فنا نده';
+		$reply=$result['message']['message_id'];
+	}//زنگیدن
 	else if($result['message']['from']['id']=="121259997"&&rand(12,25)==12)
 	{
 		$text_reply = '<b>وز زر مفت نزن</b>';
