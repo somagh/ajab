@@ -54,7 +54,7 @@ $string = json_decode(file_get_contents('php://input'));
 	}// تنوین
 	else if(strpos($text, 'بر علیه') !== false||strpos($text, 'بر له') !== false)
 	{
-		$text_reply = 'آیا می دانستید \n bar is real?';
+		$text_reply = 'آیا می دانستید <i>bar</i> is real؟';
 		$reply=$result['message']['message_id'];
 	}//حشو
 	else if(strpos($text, 'اجالتن') !== false || strpos($text, 'اجالتا') !== false)
@@ -64,42 +64,32 @@ $string = json_decode(file_get_contents('php://input'));
 	}// عجالتا
 	else if(strpos($text, 'حتا') !== false)
 	{
-		$text_reply = 'حتی یه کودن به تمام معنا هم بلده اینو درست بنویسه';
+		$text_reply = '<i>حتی</i> یک کودن به تمام معنا هم بلده اینو درست بنویسه';
 		$reply=$result['message']['message_id'];
 	}// حتی	
 	else if(strpos($text, 'انظباط') !== false || strpos($text, 'منظبط') !== false)
 	{
-		$text_reply = 'انضباط شرط لازمه نداشتن غلط املایی است. \n -امام فخیمه کیانوش';
+		$text_reply = '<i>انظباط</i> شرط لازمه نداشتن غلط املایی است';
 		$reply=$result['message']['message_id'];
 	}// انضباط	
 	else if(strpos($text, 'وحله') !== false)
 	{
-		$text_reply = 'شما در وهله اول برو املای کلماتو یاد بگیر بعد چت کن';
+		$text_reply = 'شما در <i>وهله</i> اول برو املای کلماتو یاد بگیر بعد چت کن';
 		$reply=$result['message']['message_id'];
 	}// وهله
 	else if(strpos($text, 'متوصل') !== false || strpos($text, 'توصل') !== false)
 	{
-		$text_reply = 'از دست شما بی سوادان به خدای یکتا توسل می جویم.';
+		$text_reply = 'از دست شما بی سوادان به خدای یکتا <i>توسل</i> می جویم';
 		$reply=$result['message']['message_id'];
 	}// توسل
-	else if(strpos($text, 'انتفاع') !== false)
-	{
-		$text_reply = 'سواد خود را مورد انتفاء قرار ندهید';
-		$reply=$result['message']['message_id'];
-	}// توسل
-	else if(strpos($text, 'مذبور') !== false)
-	{
-		$text_reply = 'غلط املایی مزبور نشانه نوب سعگیه';
-		$reply=$result['message']['message_id'];
-	}// مزبور
 	else if(strpos($text, 'ترجیه') !== false)
 	{
-		$text_reply = 'ترجیح میدم به میزان حماقت پشت این غلط املایی فکر نکنم';
+		$text_reply = '<i>ترجیح</i>میدم به میزان حماقت پشت این غلط املایی فکر نکنم';
 		$reply=$result['message']['message_id'];
 	}// ترجیح
 	else if(strpos($text, 'توجیح') !== false)
 	{
-		$text_reply = 'این غلط املایی توجیه ناپذیره';
+		$text_reply = 'این غلط املایی <i>توجیه</i> ناپذیرو';
 		$reply=$result['message']['message_id'];
 	}// توجیه
 	else if(strpos($text, 'MPT') !== false || strpos($text, 'M.P.T.') !== false || strpos($text, 'ام پی تی') !== false || strpos($text, 'ام.پی.تی') !== false)
@@ -109,7 +99,7 @@ $string = json_decode(file_get_contents('php://input'));
 	}// جواد	
 	else if(strpos($text, 'خوانواده') !== false)
 	{
-		$text_reply = 'تو بی استعدادی وگرنه خانوادگی که بی سواد نبودید.';
+		$text_reply = 'تو بی استعدادی وگرنه <i>خانوادگی</i> که بی سواد نبودید';
 		$reply=$result['message']['message_id'];
 	}// خوا استثنا
 	else if(strpos($text, 'گزارشات') !== false || strpos($text, 'آزمایشات') !== false || strpos($text, 'پیشنهادات') !== false || strpos($text, 'دستورات'))
@@ -124,12 +114,12 @@ $string = json_decode(file_get_contents('php://input'));
 	}//زنگیدن
 	else if($result['message']['from']['id']=="121259997"&&rand(12,21)==12)
 	{
-		$text_reply = '<b>وز زر مفت نزن</b>';
+		$text_reply = 'وز زر مفت نزن';
 		$reply=$result['message']['message_id'];
 	}
 	else if(strpos($text, 'وز ساکت') !== false||strpos($text, 'وز ساکت') !== false)
 	{
-		$text_reply = 'vez ostad '.$result['message']['from']['first_name'].' mifarmayand zer moft nazan';
+		$text_reply = 'vez ostad '.$result['message']['from']['first_name'].' mifarmayand <b>zer moft nazan</b>';
 	}
 	else if(strpos($text, 'پی ننه') !== false||strpos($text, 'pnane') !== false||strpos($text, 'پي ننه') !== false||strpos($text, 'پیننه') !== false)
 		$text_reply = '🎤🎤🎤<i>پی ننه کو؟ پی ننه کو؟ پی ننه پی ننه پی ننه کو؟</i>🎤🎤🎤';
