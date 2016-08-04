@@ -89,12 +89,12 @@ $string = json_decode(file_get_contents('php://input'));
 	}// ترجیح
 	else if(strpos($text, 'توجیح') !== false)
 	{
-		$text_reply = 'این غلط املایی <i>توجیه</i> ناپذیرو';
+		$text_reply = 'این غلط املایی <i>توجیه</i> ناپذیره';
 		$reply=$result['message']['message_id'];
 	}// توجیه
 	else if(strpos($text, 'MPT') !== false || strpos($text, 'M.P.T.') !== false || strpos($text, 'ام پی تی') !== false || strpos($text, 'ام.پی.تی') !== false)
 	{
-		$text_reply = 'استاد کریمی قدوسی رو شاهد هستیم';
+		$text_reply = 'بپا حسین فریدون صداتو تقلید نکنه جواد';
 		$reply=$result['message']['message_id'];
 	}// جواد	
 	else if(strpos($text, 'خوانواده') !== false)
@@ -123,7 +123,7 @@ $string = json_decode(file_get_contents('php://input'));
 	}
 	else if(strpos($text, 'پی ننه') !== false||strpos($text, 'pnane') !== false||strpos($text, 'پي ننه') !== false||strpos($text, 'پیننه') !== false)
 		$text_reply = '🎤🎤🎤<i>پی ننه کو؟ پی ننه کو؟ پی ننه پی ننه پی ننه کو؟</i>🎤🎤🎤';
-	else if(strpos($text, 'بکتاش') !== false||strpos($text, 'baktash') !== false)
+	else if(strpos($text, 'بکتاش') !== false||strpos($text, 'baktash') !== false||strpos($text, 'bakt') !== falsestrpos($text, 'بکت') !== false||strpos($text, '@bk7sh') !== false)
 		$text_reply = '🎤🎤🎤<i>بکتاش آفت شهپر مهوش پریوش چه بد کرد غلط کرد شوهر کرد همه رو در به در کرد</i>🎤🎤🎤';
 	else if(strpos($text, 'وزننه') !== false)
 		$text_reply = 'وزننه نسخه جدید پی ننه';
