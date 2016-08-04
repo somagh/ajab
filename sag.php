@@ -118,12 +118,14 @@ $string = json_decode(file_get_contents('php://input'));
 		$reply=$result['message']['message_id'];
 	}
 	else if(strpos($text, 'وز ساکت') !== false||strpos($text, 'وز ساکت') !== false)
-	{
 		$text_reply = 'vez ostad '.$result['message']['from']['first_name'].' mifarmayand <b>zer moft nazan</b>';
-	}
+	else if(strpos($text, 'برخیز') !== false||strpos($text, 'بلند شو') !== false||strpos($text, 'پاشو')!==false)
+		$text_reply = '<i> من اگر بنشینم، تو اگر بنشینی، چه کسی برخیزد؟</i>';
+	else if(strpos($text, 'بشین') !== false||strpos($text, 'بنشین') !== false)
+		$text_reply = '<i> من اگر برخیزم، تو اگر برخیزی، چه کسی بنشیند؟؟</i>';
 	else if(strpos($text, 'پی ننه') !== false||strpos($text, 'pnane') !== false||strpos($text, 'پي ننه') !== false||strpos($text, 'پیننه') !== false)
 		$text_reply = '🎤🎤🎤<i>پی ننه کو؟ پی ننه کو؟ پی ننه پی ننه پی ننه کو؟</i>🎤🎤🎤';
-	else if(strpos($text, 'بکتاش') !== false||strpos($text, 'baktash') !== false||strpos($text, 'bakt') !== falsestrpos($text, 'بکت') !== false||strpos($text, '@bk7sh') !== false)
+	else if(strpos($text, 'بکتاش') !== false||strpos($text, 'baktash') !== false||strpos($text, 'bakt') !== false||strpos($text, 'بکت') !== false||strpos($text, '@bk7sh') !== false||strpos($text, '@Bk7sh') !== false)
 		$text_reply = '🎤🎤🎤<i>بکتاش آفت شهپر مهوش پریوش چه بد کرد غلط کرد شوهر کرد همه رو در به در کرد</i>🎤🎤🎤';
 	else if(strpos($text, 'وزننه') !== false)
 		$text_reply = 'وزننه نسخه جدید پی ننه';
