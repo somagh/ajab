@@ -52,7 +52,7 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'بر سر کلمات فارسی تنوین می گذارند. بی حیاها';
 		$reply=$result['message']['message_id'];
 	}// تنوین
-	else if(strpos($text, 'بر علیه') !== false||strpos($text, 'بر له') !== false)
+	else if(strpos($text, 'بر علیه') !== false||strpos($text, 'بر له') !== false||strpos($text, 'برعلیه') !== false)
 	{
 		$text_reply = 'آیا می دانستید <i>bar</i> is real؟';
 		$reply=$result['message']['message_id'];
