@@ -54,7 +54,7 @@ $string = json_decode(file_get_contents('php://input'));
 	}// تنوین
 	else if(strpos($text, 'بر علیه') !== false||strpos($text, 'بر له') !== false||strpos($text, 'برعلیه') !== false)
 	{
-		$text_reply = 'آیا می دانستید <i>bar</i> is real؟';
+		$text_reply = urlencode('آیا می دانستید'.chr(10).' <i>bar</i> is real?');
 		$reply=$result['message']['message_id'];
 	}//حشو
 	else if(strpos($text, 'اجالتن') !== false || strpos($text, 'اجالتا') !== false)
@@ -120,9 +120,9 @@ $string = json_decode(file_get_contents('php://input'));
 	else if(strpos($text, 'وز ساکت') !== false||strpos($text, 'وز ساکت') !== false)
 		$text_reply = 'vez ostad '.$result['message']['from']['first_name'].' mifarmayand <b>zer moft nazan</b>';
 	else if(strpos($text, 'برخیز') !== false||strpos($text, 'بلند شو') !== false||strpos($text, 'پاشو')!==false)
-		$text_reply = '<i> من اگر بنشینم، تو اگر بنشینی، چه کسی برخیزد؟</i>';
+		$text_reply = urlencode('<i>من اگر بنشینم'.chr(10).'تو اگر بنشینی'.chr(10).'او اگر بنشیند'.chr(10).'چه کسی برخیزد؟'.chr(10).'چه کسی برخیزد؟؟؟؟'.chr(10).'چه کسی برخیزد؟؟؟؟؟؟؟؟</i>');
 	else if(strpos($text, 'بشین') !== false||strpos($text, 'بنشین') !== false)
-		$text_reply = '<i> من اگر برخیزم، تو اگر برخیزی، چه کسی بنشیند؟؟</i>';
+		$text_reply = urlencode('<i>من اگر برخیزم'.chr(10).'تو اگر برخیزی'.chr(10).'او اگر برخیزد'.chr(10).'چه کسی بنشیند؟'.chr(10).'چه کسی بنشیند؟؟؟؟'.chr(10).'چه کسی بنشیند؟؟؟؟؟؟؟؟</i>');
 	else if(strpos($text, 'پی ننه') !== false||strpos($text, 'pnane') !== false||strpos($text, 'پي ننه') !== false||strpos($text, 'پیننه') !== false)
 		$text_reply = '🎤🎤🎤<i>پی ننه کو؟ پی ننه کو؟ پی ننه پی ننه پی ننه کو؟</i>🎤🎤🎤';
 	else if(strpos($text, 'بکتاش') !== false||strpos($text, 'baktash') !== false||strpos($text, 'bakt') !== false||strpos($text, 'بکت') !== false||strpos($text, '@bk7sh') !== false||strpos($text, '@Bk7sh') !== false)
