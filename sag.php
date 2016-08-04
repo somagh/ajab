@@ -22,7 +22,12 @@ $string = json_decode(file_get_contents('php://input'));
     $text = $result['message']['text'];
 	
 		$arr = explode(" ", $text);
-	if(strpos($result['message']['entities'][0]['type'],'bot_command')!==false)
+	if($result['message']['from']['id']=="121259997"&&rand(12,25)==12)
+	{
+		$text_reply = 'وز زر مفت نزن';
+		$reply=$result['message']['message_id'];
+	}
+	else if(strpos($result['message']['entities'][0]['type'],'bot_command')!==false)
 	{
 		$text_reply='این دستور فیک است اه';
 		$reply=$result['message']['message_id'];
@@ -32,6 +37,11 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply='دست آورد های تقریبی برجام';
 		$reply=$result['message']['message_id'];
 	}// کامند ها
+	else if($result['message']['sticker']['emoji']=='✅')
+	{
+		$text_reply='وعده ی ما بهار 96✌✌';
+		$reply=$result['message']['message_id'];
+	}
 	else if(strpos($text, 'بزار') !== false)
 	{
 		$text_reply = 'بذار* نوب سگ';
@@ -112,9 +122,14 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'بی سوااااددددد فارسی رو به فنا نده';
 		$reply=$result['message']['message_id'];
 	}//زنگیدن
-	else if($result['message']['from']['id']=="121259997"&&rand(12,21)==12)
+	else if($result['message']['from']['username']=="mhossein7901")
 	{
-		$text_reply = 'وز زر مفت نزن';
+		$text_reply = 'غلام زر مفت نزن';
+		$reply=$result['message']['message_id'];
+	}
+	else if($result['message']['left_chat_participant']['id']!=0)
+	{
+		$text_reply = urlencode('<i>خداحافظ ای گل ناز🌷🌷🌷'.chr(10).'لبت به خنده شد باز😊😊😊'.chr(10).'امیدوارم دوست من🙏🙏🙏'.chr(10).'تو رو ببینمت باز✋✋✋</i>');
 		$reply=$result['message']['message_id'];
 	}
 	else if(strpos($text, 'وز ساکت') !== false||strpos($text, 'وز ساکت') !== false)
@@ -131,6 +146,14 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'وزننه نسخه جدید پی ننه';
 	else if(strpos($text, 'استا')!==false)
       		$text_reply = ' استاعاعاعاعاااااادد ';  
+	else if(strpos($text, 'خدا')!==false && strpos($text, 'لعنتت')!==false&& $result['message']['reply_to_message']['message_id']!=0)
+			  {
+				$reply=$result['message']['reply_to_message']['message_id'];
+				if(rand(1,2)==2)
+					$text_reply ="لعنت و نفرین جاودان خداوند بر تو باد";  
+				else
+					$text_reply ="خدا به زمین گرم بزنتت";
+			  }
 	else if($result['message']['from']['username']=="aryakowsary" || $result['message']['from']['username']=="A_H_P_A"|| $result['message']['from']['username']=="kianoosh76")
 	{
 	    	if($arr[1] == 'ساکت' || $arr[1] == 'خفه')
@@ -143,14 +166,6 @@ $string = json_decode(file_get_contents('php://input'));
       			$text_reply = $arr[0].' استاد '.$arr[1].' موافقه ';  
       		else if(strpos($arr[1], 'باهات')!==false && strpos($arr[2], 'مخالفم')!==false&&!(strpos($arr[0], 'من')!==false))
       			$text_reply = $arr[0].' برو بمیر ';  
-		      else if(strpos($text, 'خدا')!==false && strpos($text, 'لعنتت')!==false&& $result['message']['reply_to_message']['message_id']!=0)
-			  {
-				$reply=$result['message']['reply_to_message']['message_id'];
-				if(rand(1,2)==2)
-					$text_reply ="لعنت و نفرین جاودان خداوند بر تو باد";  
-				else
-					$text_reply ="خدا به زمین گرم بزنتت";
-			  }
 		
  		else	
 	      		$text_reply = '';
@@ -164,7 +179,7 @@ $string = json_decode(file_get_contents('php://input'));
 		else
 		{
 			$text_reply = '';
-			if(rand(1,100)==20)
+			if(rand(1,400)==20)
 			{
 			$text_reply = $result['message']['from']['first_name'].' zer nazan';
 			$reply=$result['message']['message_id'];
