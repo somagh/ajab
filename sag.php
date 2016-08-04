@@ -102,7 +102,7 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'این غلط املایی توجیه ناپذیره';
 		$reply=$result['message']['message_id'];
 	}// توجیه
-	else if(strpos($text, ' MPT') !== false || strpos($text, 'M.P.T.') !== false || strpos($text, 'ام پی تی') !== false || strpos($text, 'ام.پی.تی') !== false)
+	else if(strpos($text, 'MPT') !== false || strpos($text, 'M.P.T.') !== false || strpos($text, 'ام پی تی') !== false || strpos($text, 'ام.پی.تی') !== false)
 	{
 		$text_reply = 'استاد کریمی قدوسی رو شاهد هستیم';
 		$reply=$result['message']['message_id'];
@@ -122,7 +122,7 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'بی سوااااددددد فارسی رو به فنا نده';
 		$reply=$result['message']['message_id'];
 	}//زنگیدن
-	else if($result['message']['from']['id']=="121259997"&&rand(12,25)==12)
+	else if($result['message']['from']['id']=="121259997"&&rand(12,21)==12)
 	{
 		$text_reply = '<b>وز زر مفت نزن</b>';
 		$reply=$result['message']['message_id'];
