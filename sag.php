@@ -181,7 +181,7 @@ $string = json_decode(file_get_contents('php://input'));
 				$text_reply ="بدمت دست لاتای دور و ور پی ننه؟";
 			$reply=$result['message']['message_id'];
 		}
-		else if(($result['message']['reply_to_message']['message']['from']['username']=="kianoosh76" || $result['message']['reply_to_message']['message']['from']['username']=="A_H_P_A" || $result['message']['reply_to_message']['message']['from']['username']=="aryakowsary") && (strpos($text, 'زر نزن')!==false || strpos($text, 'خفه شو')!==false ||strpos($text, 'چرت نگو')!==false||strpos($text, 'ساکت')!==false))
+		else if(($result['message']['reply_to_message']['from']['username']=="kianoosh76" || $result['message']['reply_to_message']['from']['username']=="A_H_P_A" || $result['message']['reply_to_message']['from']['username']=="aryakowsary") && (strpos($text, 'زر نزن')!==false || strpos($text, 'خفه شو')!==false ||strpos($text, 'چرت نگو')!==false||strpos($text, 'ساکت')!==false))
 		{
 			if(rand(1,2)==2)
 				$text_reply='چه خزعبلی واسه خودت بلغور میکنی ';
