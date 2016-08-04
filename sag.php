@@ -30,11 +30,8 @@ $string = json_decode(file_get_contents('php://input'));
 	else if(strpos($result['message']['entities'][0]['type'],'bot_command')!==false)
 	{
 		$text_reply='این دستور فیک است اه';
-		$reply=$result['message']['message_id'];
-	}
-	else if(strpos($result['message']['entities'][0]['type'],'bot_command')!==false)
-	{
-		$text_reply='دست آورد های تقریبی برجام';
+		if(strpos($text, 'پیننگان') !== false || strpos($text, 'پی ننگان') !== false)
+			$text_reply=urlencode('<i> پیننگان پسر شود'.chr(10).'پی تو پسر نمی شود</i>');
 		$reply=$result['message']['message_id'];
 	}// کامند ها
 	else if($result['message']['sticker']['emoji']=='✅')
@@ -92,6 +89,11 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'از دست شما بی سوادان به خدای یکتا <i>توسل</i> می جویم';
 		$reply=$result['message']['message_id'];
 	}// توسل
+	else if(strpos($text, 'چتوری') !== false || strpos($text, 'چتور') !== false)
+	{
+		$text_reply = '<i> چطوری </i> یه نفر میتونه انقدر بی سواد باشه';
+		$reply=$result['message']['message_id'];
+	}// چطوری
 	else if(strpos($text, 'ترجیه') !== false)
 	{
 		$text_reply = '<i>ترجیح</i>میدم به میزان حماقت پشت این غلط املایی فکر نکنم';
@@ -104,7 +106,7 @@ $string = json_decode(file_get_contents('php://input'));
 	}// توجیه
 	else if(strpos($text, 'MPT') !== false || strpos($text, 'M.P.T.') !== false || strpos($text, 'ام پی تی') !== false || strpos($text, 'ام.پی.تی') !== false)
 	{
-		$text_reply = 'بپا حسین فریدون صداتو تقلید نکنه جواد';
+		$text_reply = urlencode('دست آورد های برجام؟ تقریبا هیچ'.chr(10).'حداقل برای سواد هسته ای تو');
 		$reply=$result['message']['message_id'];
 	}// جواد	
 	else if(strpos($text, 'خوانواده') !== false)
@@ -173,7 +175,18 @@ $string = json_decode(file_get_contents('php://input'));
 	else
 	{
 		if((strpos($text, 'پویا')!==false || strpos($text, 'آریا')!==false || strpos($text, 'کیانوش')!==false) && (strpos($text, 'زر نزن')!==false || strpos($text, 'خفه شو')!==false ||strpos($text, 'چرت نگو')!==false||strpos($text, 'ساکت')!==false)){
-			$text_reply='چه خزعبلی واسه خودت بلغور میکنی ';
+			if(rand(1,2)==2)
+				$text_reply='چه خزعبلی واسه خودت بلغور میکنی ';
+			else
+				$text_reply ="بدمت دست لاتای دور و ور پی ننه؟";
+			$reply=$result['message']['message_id'];
+		}
+		else if(($result['message']['reply_to_message']['message']['from']['username']=="kianoosh76" || $result['message']['reply_to_message']['message']['from']['username']=="A_H_P_A" || $result['message']['reply_to_message']['message']['from']['username']=="aryakowsary") && (strpos($text, 'زر نزن')!==false || strpos($text, 'خفه شو')!==false ||strpos($text, 'چرت نگو')!==false||strpos($text, 'ساکت')!==false))
+		{
+			if(rand(1,2)==2)
+				$text_reply='چه خزعبلی واسه خودت بلغور میکنی ';
+			else
+				$text_reply ="بدمت دست لاتای دور و ور پی ننه؟";
 			$reply=$result['message']['message_id'];
 		}
 		else
