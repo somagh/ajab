@@ -160,7 +160,13 @@ $string = json_decode(file_get_contents('php://input'));
 			  }
 	else if($result['message']['from']['username']=="aryakowsary" || $result['message']['from']['username']=="A_H_P_A"|| $result['message']['from']['username']=="kianoosh76")
 	{
-	    	if($arr[1] == 'ساکت' || $arr[1] == 'خفه')
+		if(strpos($text, 'سماق')!==false && $result['message']['from']['username']=="A_H_P_A"){
+			if(strpos($text, 'به نظرت')!==false)
+	      			$text_reply = 'بندازیمش تو دریا! بندازیمش تو دریا!';  
+	      		else if(strpos($text, 'هستی')!==false )
+	      			$text_reply = 'حی و حاضر';  
+		}
+	    	else if($arr[1] == 'ساکت' || $arr[1] == 'خفه')
 	      		$text_reply = $arr[0].' استاد میفرمایند '.$arr[1];  
       		else if(strpos($arr[1], 'زر') !== false	)
       			$text_reply = $arr[0].' استاد میفرمایند زر مفت نزن ';  
