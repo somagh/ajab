@@ -76,7 +76,7 @@ $string = json_decode(file_get_contents('php://input'));
 	}// حتی	
 	else if(strpos($text, 'انظباط') !== false || strpos($text, 'منظبط') !== false)
 	{
-		$text_reply = '<i>انظباط</i> شرط لازمه نداشتن غلط املایی است';
+		$text_reply = '<i>انضباط</i> شرط لازمه نداشتن غلط املایی است';
 		$reply=$result['message']['message_id'];
 	}// انضباط	
 	else if(strpos($text, 'وحله') !== false)
@@ -116,7 +116,7 @@ $string = json_decode(file_get_contents('php://input'));
 	}// خوا استثنا
 	else if(strpos($text, 'گزارشات') !== false || strpos($text, 'آزمایشات') !== false || strpos($text, 'پیشنهادات') !== false || strpos($text, 'دستورات'))
 	{
-		$text_reply = 'ته کلمات فارسی ات نذارید. من نمی پسندم';
+		$text_reply = 'ته کلمات فارسی ات نذارید. غلط است دیگر';
 		$reply=$result['message']['message_id'];
 	}// ات سر فارسی	
 	else if(strpos($text, 'بزنگ') !== false||strpos($text, 'زنگید') !== false||strpos($text, 'میزنگ') !== false||strpos($text, 'می زنگ') !== false)
@@ -126,7 +126,7 @@ $string = json_decode(file_get_contents('php://input'));
 	}//زنگیدن
 	else if($result['message']['left_chat_participant']['id']!=0)
 	{
-		$text_reply = urlencode('<i>خداحافظ ای گل ناز🌷🌷🌷'.chr(10).'لبت به خنده شد باز😊😊😊'.chr(10).'امیدوارم دوست من🙏🙏🙏'.chr(10).'تو رو ببینمت باز✋✋✋</i>');
+		$text_reply = urlencode('<i>خداحافظ گل ناز🌷🌷🌷'.chr(10).'لبت به خنده شد باز😊😊😊'.chr(10).'امیدوارم دوست من🙏🙏🙏'.chr(10).'تو رو ببینمت باز✋✋✋</i>');
 		$reply=$result['message']['message_id'];
 	}
 	else if(strpos($text, 'وز ساکت') !== false||strpos($text, 'وز ساکت') !== false)
@@ -137,14 +137,17 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = urlencode('<i>من اگر برخیزم'.chr(10).'تو اگر برخیزی'.chr(10).'او اگر برخیزد'.chr(10).'چه کسی بنشیند؟'.chr(10).'چه کسی بنشیند؟؟؟؟'.chr(10).'چه کسی بنشیند؟؟؟؟؟؟؟؟</i>');
 	else if(strpos($text, 'پی ننه') !== false||strpos($text, 'pnane') !== false||strpos($text, 'پي ننه') !== false||strpos($text, 'پیننه') !== false)
 		$text_reply = '🎤🎤🎤<i>پی ننه کو؟ پی ننه کو؟ پی ننه پی ننه پی ننه کو؟</i>🎤🎤🎤';
-	else if(strpos($text, 'پی ننه') !== false||strpos($text, 'pnane') !== false||strpos($text, 'پي ننه') !== false||strpos($text, 'پیننه') !== false)
-		$text_reply = '<i>خااالصط</i>';
+	else if(strpos($text, 'دبه') !== false || strpos($text, '10be') !== false || strpos($text, 'dabbe') !== false || strpos($text, 'دببه') !== false)
+		$text_reply = '<i>خااالص</i>';
 	else if(strpos($text, 'بکتاش') !== false||strpos($text, 'baktash') !== false||strpos($text, 'bakt') !== false||strpos($text, 'بکت') !== false||strpos($text, '@bk7sh') !== false||strpos($text, '@Bk7sh') !== false)
 		$text_reply = '🎤🎤🎤<i>بکتاش آفت شهپر مهوش پریوش چه بد کرد غلط کرد شوهر کرد همه رو در به در کرد</i>🎤🎤🎤';
 	else if(strpos($text, 'وزننه') !== false)
 		$text_reply = 'وزننه نسخه جدید پی ننه';
 	else if(strpos($text, 'استا')!==false)
-      		$text_reply = ' استاعاعاعاعاااااادد ';  
+		if(rand(1,2)==2)
+			$text_reply ="استاعاععااااد";  
+		else
+			$text_reply ="اسستاععععد";
 	else if(strpos($text, 'خدا')!==false && strpos($text, 'لعنتت')!==false&& $result['message']['reply_to_message']['message_id']!=0)
 			  {
 				$reply=$result['message']['reply_to_message']['message_id'];
@@ -157,7 +160,7 @@ $string = json_decode(file_get_contents('php://input'));
 	{
 		if(strpos($text, 'سماق')!==false && $result['message']['from']['username']=="A_H_P_A"){
 			if(strpos($text, 'به نظرت')!==false)
-	      			$text_reply = 'بندازیمش تو دریا! بندازیمش تو دریا!';  
+	      			$text_reply = 'بندازیمش تو سطل زباله! بندازیمش تو سطل زباله!';  
 	      		else if(strpos($text, 'هستی')!==false )
 	      			$text_reply = 'حی و حاضر';  
 		}
