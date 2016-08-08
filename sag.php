@@ -124,7 +124,7 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'بی سوااااددددد فارسی رو به فنا نده';
 		$reply=$result['message']['message_id'];
 	}//زنگیدن
-	else if($result['message']['from']['username']=="mhossein7901")
+	else if($result['message']['from']['username']=="mhossein7901"&&rand(1,13)==2)
 	{
 		$text_reply = 'غلام زر مفت نزن';
 		$reply=$result['message']['message_id'];
