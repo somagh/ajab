@@ -49,7 +49,7 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'می ذار* ای نوب';
 		$reply=$result['message']['message_id'];
 	}
-	else if(strpos($text, 'گزاشت') !== false)
+	e'clse if(strpos($text, 'گزاشت') !== false)
 	{
 		$text_reply = 'گذاشت* ای نوب';
 		$reply=$result['message']['message_id'];
@@ -116,7 +116,7 @@ $string = json_decode(file_get_contents('php://input'));
 	}// خوا استثنا
 	else if(strpos($text, 'گزارشات') !== false || strpos($text, 'آزمایشات') !== false || strpos($text, 'پیشنهادات') !== false || strpos($text, 'دستورات'))
 	{
-		$text_reply = 'ته کلمات فارسی ات نذارید. من نمی پسندم';
+		$text_reply = 'ته کلمات فارسی ات نذارید. غلط است دیگر';
 		$reply=$result['message']['message_id'];
 	}// ات سر فارسی	
 	else if(strpos($text, 'بزنگ') !== false||strpos($text, 'زنگید') !== false||strpos($text, 'میزنگ') !== false||strpos($text, 'می زنگ') !== false)
@@ -142,8 +142,8 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = urlencode('<i>من اگر برخیزم'.chr(10).'تو اگر برخیزی'.chr(10).'او اگر برخیزد'.chr(10).'چه کسی بنشیند؟'.chr(10).'چه کسی بنشیند؟؟؟؟'.chr(10).'چه کسی بنشیند؟؟؟؟؟؟؟؟</i>');
 	else if(strpos($text, 'پی ننه') !== false||strpos($text, 'pnane') !== false||strpos($text, 'پي ننه') !== false||strpos($text, 'پیننه') !== false)
 		$text_reply = '🎤🎤🎤<i>پی ننه کو؟ پی ننه کو؟ پی ننه پی ننه پی ننه کو؟</i>🎤🎤🎤';
-	else if(strpos($text, 'پی ننه') !== false||strpos($text, 'pnane') !== false||strpos($text, 'پي ننه') !== false||strpos($text, 'پیننه') !== false)
-		$text_reply = '<i>خااالصط</i>';
+	else if(strpos($text, 'دبه') !== false || strpos($text, '10be') !== false || strpos($text, 'dabbe') !== false || strpos($text, 'دببه') !== false)
+		$text_reply = '<i>ااالصط</i>';
 	else if(strpos($text, 'بکتاش') !== false||strpos($text, 'baktash') !== false||strpos($text, 'bakt') !== false||strpos($text, 'بکت') !== false||strpos($text, '@bk7sh') !== false||strpos($text, '@Bk7sh') !== false)
 		$text_reply = '🎤🎤🎤<i>بکتاش آفت شهپر مهوش پریوش چه بد کرد غلط کرد شوهر کرد همه رو در به در کرد</i>🎤🎤🎤';
 	else if(strpos($text, 'وزننه') !== false)
