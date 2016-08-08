@@ -30,7 +30,7 @@ $string = json_decode(file_get_contents('php://input'));
 	else if(strpos($result['message']['entities'][0]['type'],'bot_command')!==false)
 	{
 		$text_reply='این دستور فیک است اه';
-		if(strpos($text, 'پیننگان') !== false || strpos($text, 'پی ننگان') !== false)
+		if(strpos($text, 'pnanegan') !== false || strpos($text, 'Pnanegan') !== false || strpos($text, 'PNANEGAN') !== false)
 			$text_reply=urlencode('<i> پیننگان پسر شود'.chr(10).'پی تو پسر نمی شود</i>');
 		$reply=$result['message']['message_id'];
 	}// کامند ها
@@ -142,6 +142,8 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = urlencode('<i>من اگر برخیزم'.chr(10).'تو اگر برخیزی'.chr(10).'او اگر برخیزد'.chr(10).'چه کسی بنشیند؟'.chr(10).'چه کسی بنشیند؟؟؟؟'.chr(10).'چه کسی بنشیند؟؟؟؟؟؟؟؟</i>');
 	else if(strpos($text, 'پی ننه') !== false||strpos($text, 'pnane') !== false||strpos($text, 'پي ننه') !== false||strpos($text, 'پیننه') !== false)
 		$text_reply = '🎤🎤🎤<i>پی ننه کو؟ پی ننه کو؟ پی ننه پی ننه پی ننه کو؟</i>🎤🎤🎤';
+	else if(strpos($text, 'پی ننه') !== false||strpos($text, 'pnane') !== false||strpos($text, 'پي ننه') !== false||strpos($text, 'پیننه') !== false)
+		$text_reply = '<i>خااالصط</i>';
 	else if(strpos($text, 'بکتاش') !== false||strpos($text, 'baktash') !== false||strpos($text, 'bakt') !== false||strpos($text, 'بکت') !== false||strpos($text, '@bk7sh') !== false||strpos($text, '@Bk7sh') !== false)
 		$text_reply = '🎤🎤🎤<i>بکتاش آفت شهپر مهوش پریوش چه بد کرد غلط کرد شوهر کرد همه رو در به در کرد</i>🎤🎤🎤';
 	else if(strpos($text, 'وزننه') !== false)
@@ -158,16 +160,27 @@ $string = json_decode(file_get_contents('php://input'));
 			  }
 	else if($result['message']['from']['username']=="aryakowsary" || $result['message']['from']['username']=="A_H_P_A"|| $result['message']['from']['username']=="kianoosh76")
 	{
-	    	if($arr[1] == 'ساکت' || $arr[1] == 'خفه')
+		if(strpos($text, 'سماق')!==false && $result['message']['from']['username']=="A_H_P_A"){
+			if(strpos($text, 'به نظرت')!==false)
+	      			$text_reply = 'بندازیمش تو دریا! بندازیمش تو دریا!';  
+	      		else if(strpos($text, 'هستی')!==false )
+	      			$text_reply = 'حی و حاضر';  
+		}
+	    	else if($arr[1] == 'ساکت' || $arr[1] == 'خفه')
 	      		$text_reply = $arr[0].' استاد میفرمایند '.$arr[1];  
       		else if(strpos($arr[1], 'زر') !== false	)
       			$text_reply = $arr[0].' استاد میفرمایند زر مفت نزن ';  
       		else if($arr[1] == 'چرت' || $arr[1] == 'چرند')
       			$text_reply = $arr[0].' استاد میفرمایند چرت نگو ';  
-      		else if(strpos($arr[1], 'باهات')!==false && strpos($arr[2], 'موافقم')!==false&&!(strpos($arr[0], 'من')!==false))
-      			$text_reply = $arr[0].' استاد '.$arr[1].' موافقه ';  
+      		else if(strpos($arr[1], 'باهات')!==false && strpos($arr[2], 'موافقم')!==false){
+      			if($arr[0] !== 'من' && $arr[0] !== 'منم')
+      				$text_reply = $arr[0].' استاد '.$arr[1].' موافقه ';  
+      			else
+      				$text_reply = ' استاد '.$arr[1].' موافقه ';  
+			$reply=$result['message']['message_id'];
+      		}
       		else if(strpos($arr[1], 'باهات')!==false && strpos($arr[2], 'مخالفم')!==false&&!(strpos($arr[0], 'من')!==false))
-      			$text_reply = $arr[0].' برو بمیر ';  
+      			$text_reply = $arr[0].' برو بمیر ';  	
 		
  		else	
 	      		$text_reply = '';
