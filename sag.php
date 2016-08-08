@@ -124,11 +124,6 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'بی سوااااددددد فارسی رو به فنا نده';
 		$reply=$result['message']['message_id'];
 	}//زنگیدن
-	else if($result['message']['from']['username']=="mhossein7901"&&rand(1,13)==2)
-	{
-		$text_reply = 'غلام زر مفت نزن';
-		$reply=$result['message']['message_id'];
-	}
 	else if($result['message']['left_chat_participant']['id']!=0)
 	{
 		$text_reply = urlencode('<i>خداحافظ ای گل ناز🌷🌷🌷'.chr(10).'لبت به خنده شد باز😊😊😊'.chr(10).'امیدوارم دوست من🙏🙏🙏'.chr(10).'تو رو ببینمت باز✋✋✋</i>');
