@@ -22,14 +22,14 @@ $string = json_decode(file_get_contents('php://input'));
     $text = $result['message']['text'];
 	
 		$arr = explode(" ", $text);
-	if($result['message']['from']['id']=="121259997"&&rand(12,25)==12)
+	if($result['message']['from']['id']=="121259997"&&rand(1,25)==12)
 	{
 		$text_reply = 'وز زر مفت نزن';
 		$reply=$result['message']['message_id'];
 	}
 	if(strpos($text, 'pnanegan') !== false || strpos($text, 'Pnanegan') !== false || strpos($text, 'PNANEGAN') !== false)
 		$text_reply=urlencode('<i> پیننگان پسر شود'.chr(10).'پی تو پسر نمی شود</i>');
-	else if($result['message']['sticker']['emoji']=='✅' /*|| strpos($text, 'احمدی نژاد')!== false*/)
+	else if($result['message']['sticker']['emoji']=='✅' || strpos($text, 'احمدی نژاد')!== false)
 	{
 		
 		if(rand(1,2)==2)
@@ -38,7 +38,7 @@ $string = json_decode(file_get_contents('php://input'));
 			$text_reply=urlencode('وعده ی ما بهار 96✌✌'.chr(10).'خشکسالی شده ای بارش باران برگرد');
 		$reply=$result['message']['message_id'];
 	}//مظلومترین رئیس جمهور
-	else if(strpos($text, 'ترامپ')!== false||strpos($text, 'Trump')!== false)
+	else if(strpos($text, 'ترامپ')!== false||strpos($text, 'Trump')!== false||strpos($text, 'trump')!== false)
 	{
 		if(rand(1,2)==2)
 			$text_reply=urlencode('وعده ی ما نوامبر 2016✌✌'.chr(10).'MAKE AMERICA GREAT AGAIN');  
@@ -48,29 +48,44 @@ $string = json_decode(file_get_contents('php://input'));
 	}//مظلومترین رئیس جمهور
 	else if(strpos($text, 'بزار') !== false)
 	{
-		$text_reply = 'بذار* نوب سگ';
+		$text_reply = 'بذار*';
 		$reply=$result['message']['message_id'];
 	}
 	else if(strpos($text, 'میزار') !== false||strpos($text, 'می زار') !== false)
 	{
-		$text_reply = 'می ذار* ای نوب';
+		$text_reply = 'می ذار*';
 		$reply=$result['message']['message_id'];
 	}
 	else if(strpos($text, 'گزاشت') !== false)
 	{
-		$text_reply = 'گذاشت* ای نوب';
+		$text_reply = 'گذاشت*';
 		$reply=$result['message']['message_id'];
 	}// بذار
-	else if(strpos($text, 'گاها') !== false || strpos($text, 'گاهن') !== false || strpos($text, 'خواهشن') !== false || strpos($text, 'خواهشا') !== false || strpos($text, 'دومن') !== false || strpos($text, 'دوما') !== false || strpos($text, 'سوما') !== false || strpos($text, 'سومن') !== false)
+	else if(strpos($text, 'برگذار') !== false)
+	{
+		$text_reply = '*برگزار ';
+		$reply=$result['message']['message_id'];
+	}// برگزار
+	else if(strpos($text, 'کارگذار') !== false)
+	{
+		$text_reply = '*کارگزار ';
+		$reply=$result['message']['message_id'];
+	}// برگزار
+	else if(strpos($text, 'بارگزار') !== false)
+	{
+		$text_reply = '*بارگذار ';
+		$reply=$result['message']['message_id'];
+	}// بارگذار
+	else if(strpos($text, 'سپاس') !== false && strpos($text, 'گذار') !== false)
+	{
+		$text_reply = '*گزار';
+		$reply=$result['message']['message_id'];
+	}// بارگذار
+	else if(strpos($text, 'گاها') !== false || strpos($text, 'گاهن') !== false || strpos($text, 'خواهشن') !== false || strpos($text, 'خواهشا') !== false || strpos($text, 'دومن') !== false || strpos($text, 'دوما') !== false || strpos($text, 'سوما') !== false || strpos($text, 'سومن') !== false|| strpos($text, 'ناچارا') !== false || strpos($text, 'ناچارن') !== false)
 	{
 		$text_reply = 'بر سر کلمات فارسی تنوین می گذارند. بی حیاها';
 		$reply=$result['message']['message_id'];
 	}// تنوین
-	else if(strpos($text, 'بر علیه') !== false||strpos($text, 'بر له') !== false||strpos($text, 'برعلیه') !== false)
-	{
-		$text_reply = urlencode('آیا می دانستید'.chr(10).' <i>bar</i> is real?');
-		$reply=$result['message']['message_id'];
-	}//حشو
 	else if(strpos($text, 'اجالتن') !== false || strpos($text, 'اجالتا') !== false)
 	{
 		$text_reply = '*عجالتا';
@@ -121,11 +136,6 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'گل مکانی برو بمیر';
 		$reply=$result['message']['message_id'];
 	}// سگ*/
-	else if(strpos($text, 'خوانواده') !== false)
-	{
-		$text_reply = 'تو بی استعدادی وگرنه <i>خانوادگی</i> که بی سواد نبودید';
-		$reply=$result['message']['message_id'];
-	}// خوا استثنا
 	else if(strpos($text, 'گزارشات') !== false || strpos($text, 'آزمایشات') !== false || strpos($text, 'پیشنهادات') !== false || strpos($text, 'دستورات'))
 	{
 		$text_reply = 'ته کلمات فارسی ات نذارید. غلط است دیگر';
@@ -228,7 +238,7 @@ $string = json_decode(file_get_contents('php://input'));
 			$url .= '&reply_to_message_id=' .$reply;
 			$url .= '&parse_mode=html';
 			$res = file_get_contents($url);
-			$text_reply = "This message is generated randomly to stop nonsensical chit-chats.";
+			$text_reply = urlencode("This message is generated randomly to stop nonsensical chit-chats.".chr(10)."For more information, contact gmail@somag.be");
 			$reply='';
 			}
 		}
