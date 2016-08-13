@@ -97,10 +97,76 @@ $string = json_decode(file_get_contents('php://input'));
 	}//مظلومترین رئیس جمهور
 	else if(strpos($text, 'ترامپ')!== false||strpos($text, 'Trump')!== false||strpos($text, 'trump')!== false)
 	{
+<<<<<<< HEAD
 		if(mt_rand(1,2)==2)
 			$text_reply=urlencode('وعده ی ما نوامبر 2016✌✌'.chr(10).'MAKE AMERICA GREAT AGAIN');  
 		else
 			$text_reply=urlencode('وعده ی ما نوامبر 2016✌✌'.chr(10).'The beauty of me is that I’m very rich.');
+=======
+		$text_reply=urlencode('وعده ی ما نوامبر 2016✌✌'.chr(10));
+		switch(mt_rand(1,20)){
+		case 1:
+			$text_reply.='MAKE AMERICA GREAT AGAIN';  
+			break;
+		case 2:
+			$text_reply.='Part of the beauty of me is that I’m very rich.';
+			break;
+		case 3:
+			$text_reply.='Public reports routinely state great amounts of crime are being commited by illegal immigrants. This must be stopped and it must be stopped now.';
+			break;
+		case 4:
+			$text_reply.='I think it has to do with perhaps the fact that I\'m very, very strong on the border.';
+			break;
+		case 5:
+				$text_reply.='We\'re going to bring people in, but we\'re going to do it legally.';
+				break;
+		case 6:
+				$text_reply.="I don't want people coming in from the terror countries.";
+				break;
+		case 7:
+				$text_reply.="America First will be the major and overriding theme of my administration.";
+				break;
+		case 8:
+				$text_reply.="اگر برجام را آتش بزنید آن را پاره میکنیم.";
+				break;
+		case 9:
+				$text_reply.="An ‘extremely credible source’ has called my office and told me that Barack Obama’s birth certificate is a fraud";
+				break;
+		case 10:
+				$text_reply.="All of the women on The Apprentice flirted with me – consciously or unconsciously. That’s to be expected. ";
+				break;
+		case 11:
+				$text_reply.="It’s freezing and snowing in New York – we need global warming!";
+				break;
+		case 12:
+				$text_reply.="I think the only difference between me and the other candidates is that I’m more honest and my women are more beautiful.";
+				break;
+		case 13:
+				$text_reply.="The point is, you can never be too greedy.";
+				break;
+		case 14:
+				$text_reply.="My Twitter has become so powerful that I can actually make my enemies tell the truth.";
+				break;
+		case 15:
+				$text_reply.="One of they key problems today is that politics is such a disgrace. Good people don’t go into government.";
+				break;
+		case 16:
+				$text_reply.="I have a great relationship with the blacks.";
+				break;
+		case 17:
+				$text_reply.="I have great respect for women.";
+				break;
+		case 18:
+				$text_reply.="I was down there, and I watched our police and our firemen, down on 7-Eleven, down at the World Trade Center, right after it came down.";
+				break;
+		case 19:
+				$text_reply.="Lyin' Ted Cruz just used a picture of Melania from a shoot in his ad. Be careful, Lyin' Ted, or I will spill the beans on your wife!";
+				break;
+		case 20:
+				$text_reply.="My IQ is one of the highest — and you all know it! Please don't feel so stupid or insecure; it's not your fault.";
+				break;
+		}
+>>>>>>> 0f6020fb3895c8af459fa5d089d30e4a90759bcd
 		$reply=$result['message']['message_id'];
 	}//مظلومترین رئیس جمهور
 	else if(strpos($text, 'بزار') !== false)
