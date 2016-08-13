@@ -29,9 +29,9 @@ $string = json_decode(file_get_contents('php://input'));
 	}
 	if(strpos($text, 'pnanegan') !== false || strpos($text, 'Pnanegan') !== false || strpos($text, 'PNANEGAN') !== false)
 		$text_reply=urlencode('<i> پیننگان پسر شود'.chr(10).'پی تو پسر نمی شود</i>');
-	else if($result['message']['sticker']['emoji']=='✅' /*|| strpos($text, 'احمدی نژاد')!== false*/)
+	else if($result['message']['sticker']['emoji']=='✅' || strpos($text, 'احمدی نژاد')!== false)
 	{
-		switch(rand(1,20))
+		switch(rand(1,20)){
 		case 1:
 			$text_reply=urlencode('وعده ی ما بهار 96✌✌'.chr(10).'جیگردار نژاد');  
 			break;
@@ -92,6 +92,7 @@ $string = json_decode(file_get_contents('php://input'));
 		case 20:
 			$text_reply=urlencode('وعده ی ما بهار 96✌✌'.chr(10).'این هم از آن حرف‌هاست. احمدی‌نژاد و خانه نشینی و استراحت؟! اکثر افراد می‌گویند یه کم استراحت کن و به خودت برس. مطمئن باشید که‌این وصله‌ها به دولت نمی‌چسبد و من همواره سعی کردم با یک ادبیات صحیح و منطقی و درست در خصوص ولایت تعریف کنم.');
 			break;	
+		}
 		$reply=$result['message']['message_id'];
 	}//مظلومترین رئیس جمهور
 	else if(strpos($text, 'ترامپ')!== false||strpos($text, 'Trump')!== false||strpos($text, 'trump')!== false)
@@ -137,7 +138,7 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = '*گزار';
 		$reply=$result['message']['message_id'];
 	}// بارگذار
-	else if(strpos($text, 'گاها') !== false || strpos($text, 'گاهن') !== false || strpos($text, 'خواهشن') !== false || strpos($text, 'خواهشا') !== false || strpos($text, 'دومن') !== false || strpos($text, 'دوما') !== false || strpos($text, 'سوما') !== false || strpos($text, 'سومن') !== false|| strpos($text, 'ناچارا') !== false || strpos($text, 'ناچارن') !== false)
+	else if(strpos($text, 'گاها') !== false || strpos($text, 'گاهن') !== false || strpos($text, 'خواهشن') !== false || strpos($text, 'خواهشا') !== false || strpos($text, 'دومن') !== false || strpos($text, 'سومن') !== false|| strpos($text, 'ناچارا') !== false || strpos($text, 'ناچارن') !== false)
 	{
 		$text_reply = 'بر سر کلمات فارسی تنوین می گذارند. بی حیاها';
 		$reply=$result['message']['message_id'];
@@ -238,15 +239,17 @@ $string = json_decode(file_get_contents('php://input'));
 	}
 	else if($result['message']['from']['username']=="aryakowsary" || $result['message']['from']['username']=="A_H_P_A"|| $result['message']['from']['username']=="kianoosh76")
 	{
-		/*if(strpos($text, 'سماق')!==false && $result['message']['from']['username']=="A_H_P_A"){
+		if(strpos($text, 'سماق')!==false && $result['message']['from']['username']=="A_H_P_A"){
 			if(strpos($text, 'به نظرت')!==false)
 	      			$text_reply = 'بندازیمش تو سطل زباله! بندازیمش تو سطل زباله!';  
 	      		else if(strpos($text, 'هستی')!==false )
 	      			$text_reply = 'حی و حاضر';  
 		}
+			else if($arr[1] == 'مرغه')
+	      		$text_reply = 'کی از همه مرغ تره؟ '.$arr[0].' '.$arr[0].' '.$arr[0].' '.$arr[0];  
 	    	else if($arr[1] == 'ساکت' || $arr[1] == 'خفه')
 	      		$text_reply = $arr[0].' استاد میفرمایند '.$arr[1];  
-      		else if(strpos($arr[1], 'زر') !== false	)
+      		else if($arr[1]== 'زر'	)
       			$text_reply = $arr[0].' استاد میفرمایند زر مفت نزن ';  
       		else if($arr[1] == 'چرت' || $arr[1] == 'چرند')
       			$text_reply = $arr[0].' استاد میفرمایند چرت نگو ';  
@@ -262,7 +265,7 @@ $string = json_decode(file_get_contents('php://input'));
 		
  		else	
 	      		$text_reply = '';
-			*/
+			
 	}
 	/*else
 	{
