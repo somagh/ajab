@@ -31,7 +31,7 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply=urlencode('<i> پیننگان پسر شود'.chr(10).'پی تو پسر نمی شود</i>');
 	else if($result['message']['sticker']['emoji']=='✅' || strpos($text, 'احمدی نژاد')!== false)
 	{
-		switch(rand(1,20)){
+		switch(mt_rand(1,20)){
 		case 1:
 			$text_reply=urlencode('وعده ی ما بهار 96✌✌'.chr(10).'جیگردار نژاد');  
 			break;
@@ -97,7 +97,7 @@ $string = json_decode(file_get_contents('php://input'));
 	}//مظلومترین رئیس جمهور
 	else if(strpos($text, 'ترامپ')!== false||strpos($text, 'Trump')!== false||strpos($text, 'trump')!== false)
 	{
-		if(rand(1,2)==2)
+		if(mt_rand(1,2)==2)
 			$text_reply=urlencode('وعده ی ما نوامبر 2016✌✌'.chr(10).'MAKE AMERICA GREAT AGAIN');  
 		else
 			$text_reply=urlencode('وعده ی ما نوامبر 2016✌✌'.chr(10).'The beauty of me is that I’m very rich.');
@@ -232,7 +232,7 @@ $string = json_decode(file_get_contents('php://input'));
 	else if(strpos($text, 'خدا')!==false && strpos($text, 'لعنتت')!==false&& $result['message']['reply_to_message']['message_id']!=0)
 	{
 		$reply=$result['message']['reply_to_message']['message_id'];
-		if(rand(1,2)==2)
+		if(mt_rand(1,2)==2)
 			$text_reply ="لعنت و نفرین جاودان خداوند بر تو باد";  
 		else	
 			$text_reply ="خدا به زمین گرم بزنتت";
