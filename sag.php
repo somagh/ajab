@@ -29,7 +29,7 @@ $string = json_decode(file_get_contents('php://input'));
 	}
 	if(strpos($text, 'pnanegan') !== false || strpos($text, 'Pnanegan') !== false || strpos($text, 'PNANEGAN') !== false)
 		$text_reply=urlencode('<i> پیننگان پسر شود'.chr(10).'پی تو پسر نمی شود</i>');
-	else if($result['message']['sticker']['emoji']=='✅' || strpos($text, 'احمدی نژاد')!== false)
+	else if($result['message']['sticker']['emoji']=='✅' /*|| strpos($text, 'احمدی نژاد')!== false*/)
 	{
 		
 		if(rand(1,2)==2)
