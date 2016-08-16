@@ -97,12 +97,6 @@ $string = json_decode(file_get_contents('php://input'));
 	}//مظلومترین رئیس جمهور
 	else if(strpos($text, 'ترامپ')!== false||strpos($text, 'Trump')!== false||strpos($text, 'trump')!== false)
 	{
-<<<<<<< HEAD
-		if(mt_rand(1,2)==2)
-			$text_reply=urlencode('وعده ی ما نوامبر 2016✌✌'.chr(10).'MAKE AMERICA GREAT AGAIN');  
-		else
-			$text_reply=urlencode('وعده ی ما نوامبر 2016✌✌'.chr(10).'The beauty of me is that I’m very rich.');
-=======
 		$text_reply=urlencode('وعده ی ما نوامبر 2016✌✌'.chr(10));
 		switch(mt_rand(1,20)){
 		case 1:
@@ -166,9 +160,13 @@ $string = json_decode(file_get_contents('php://input'));
 				$text_reply.="My IQ is one of the highest — and you all know it! Please don't feel so stupid or insecure; it's not your fault.";
 				break;
 		}
->>>>>>> 0f6020fb3895c8af459fa5d089d30e4a90759bcd
 		$reply=$result['message']['message_id'];
 	}//مظلومترین رئیس جمهور
+	else if(strpos($text, 'انتخاب واحد') !== false)
+	{
+		$text_reply = 'خرخون دو عالم الان چه وقت انتخاب واحده مگه میخوای سه ساله کنی';
+		$reply=$result['message']['message_id'];
+	}
 	else if(strpos($text, 'بزار') !== false)
 	{
 		$text_reply = 'بذار*';
@@ -305,7 +303,9 @@ $string = json_decode(file_get_contents('php://input'));
 	}
 	else if($result['message']['from']['username']=="aryakowsary" || $result['message']['from']['username']=="A_H_P_A"|| $result['message']['from']['username']=="kianoosh76")
 	{
-		if(strpos($text, 'سماق')!==false && $result['message']['from']['username']=="A_H_P_A"){
+		if(strpos($text,'حرف دهنتو بفهم سماق')!==false)
+	      		$text_reply = 'ببخشید استغفار می طلبم';  
+		else if(strpos($text, 'سماق')!==false && $result['message']['from']['username']=="A_H_P_A"){
 			if(strpos($text, 'به نظرت')!==false)
 	      			$text_reply = 'بندازیمش تو سطل زباله! بندازیمش تو سطل زباله!';  
 	      		else if(strpos($text, 'هستی')!==false )
@@ -354,7 +354,7 @@ $string = json_decode(file_get_contents('php://input'));
 		else
 		{
 			$text_reply = '';
-			if(rand(1,400)==2)
+			if(mt_rand(1,400)==2)
 			{
 			$text_reply = $result['message']['from']['first_name'].' zer nazan';
 			$reply=$result['message']['message_id'];
