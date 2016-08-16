@@ -247,9 +247,9 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'این غلط املایی <i>توجیه</i> ناپذیره';
 		$reply=$result['message']['message_id'];
 	}// توجیه
-	/*else if(strpos($text, 'MPT') !== false || strpos($text, 'M.P.T.') !== false || strpos($text, 'ام پی تی') !== false || strpos($text, 'ام.پی.تی') !== false)
+	else if(strpos($text, 'MPT') !== false || strpos($text, 'M.P.T.') !== false || strpos($text, 'ام پی تی') !== false || strpos($text, 'ام.پی.تی') !== false)
 	{
-		$text_reply = '#کریمیـقدوسی';
+		$text_reply = 'Achievement Unlocked: Karimi Ghoddoosi		';
 		$reply=$result['message']['message_id'];
 	}// جواد	
 	else if(strpos($text, 'صگ') !== false)
