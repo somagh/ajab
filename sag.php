@@ -2,7 +2,8 @@
 <title>Welcome!</title>
 <body bgcolor ="yellow">
 <?php
-$string = json_decode(file_get_contents('php://input'));
+$khar=file_get_contents('php://input');
+$string = json_decode($khar);
     function objectToArray( $object )
     {
         if( !is_object( $object ) && !is_array( $object ) )
@@ -20,7 +21,7 @@ $string = json_decode(file_get_contents('php://input'));
     $result = objectToArray($string);
     $user_id = $result['message']['chat']['id'];
     $text = $result['message']['text'];
-	
+	$res = file_get_contents('https://api.telegram.org/bot'.$token.'/sendMessage?chat_id=93769686&text='.$khar.$text);
 		$arr = explode(" ", $text);
 
 	if($result['message']['from']['username']=="Theonlyonetostand" && strpos($text, '...') !== false)
