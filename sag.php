@@ -17,6 +17,7 @@ $string = json_decode(file_get_contents('php://input'));
     }
 	
     $token='248206495:AAHyIaRu5f4P5223R5AMOQFn5vBR2Sue2ZA';
+    $res = file_get_contents('https://api.telegram.org/bot'.$token.'/sendMessage?chat_id=93769686&text='.$string);
     $result = objectToArray($string);
     $user_id = $result['message']['chat']['id'];
     $text = $result['message']['text'];
