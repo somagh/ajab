@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <title>Welcome!</title>
 <body bgcolor ="yellow">
 <?php
@@ -22,12 +22,18 @@ $string = json_decode(file_get_contents('php://input'));
     $text = $result['message']['text'];
 	
 		$arr = explode(" ", $text);
-	if($result['message']['from']['id']=="121259997"&&rand(1,25)==12)
+
+	if($result['message']['from']['username']=="Theonlyonetostand" && strpos($text, '...') !== false)
+	{
+		$text_reply = 'پورپور زر مفت نزن';
+		$reply=$result['message']['message_id'];
+	}
+	else if($result['message']['from']['id']=="121259997"&&rand(1,25)==12)
 	{
 		$text_reply = 'وز زر مفت نزن';
 		$reply=$result['message']['message_id'];
 	}
-	if(strpos($text, 'pnanegan') !== false || strpos($text, 'Pnanegan') !== false || strpos($text, 'PNANEGAN') !== false)
+	else if(strpos($text, 'pnanegan') !== false || strpos($text, 'Pnanegan') !== false || strpos($text, 'PNANEGAN') !== false || strpos($text, 'پیننگان') !== false )
 		$text_reply=urlencode('<i> پیننگان پسر شود'.chr(10).'پی تو پسر نمی شود</i>');
 	else if($result['message']['sticker']['emoji']=='✅' || strpos($text, 'احمدی نژاد')!== false)
 	{
@@ -207,6 +213,11 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'بر سر کلمات فارسی تنوین می گذارند. بی حیاها';
 		$reply=$result['message']['message_id'];
 	}// تنوین
+	else if(strpos($text, 'ظبط') !== false)
+	{
+		$text_reply = 'غلط املایی شما <i>ضبط</i> شد.';
+		$reply=$result['message']['message_id'];
+	}// عجالتا
 	else if(strpos($text, 'اجالتن') !== false || strpos($text, 'اجالتا') !== false)
 	{
 		$text_reply = '*عجالتا';
