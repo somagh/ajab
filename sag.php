@@ -1,8 +1,9 @@
-<html>
+﻿<html>
 <title>Welcome!</title>
 <body bgcolor ="yellow">
 <?php
-$string = json_decode(file_get_contents('php://input'));
+$khar=file_get_contents('php://input');
+$string = json_decode($khar);
     function objectToArray( $object )
     {
         if( !is_object( $object ) && !is_array( $object ) )
@@ -20,14 +21,20 @@ $string = json_decode(file_get_contents('php://input'));
     $result = objectToArray($string);
     $user_id = $result['message']['chat']['id'];
     $text = $result['message']['text'];
-	
+	$res = file_get_contents('https://api.telegram.org/bot'.$token.'/sendMessage?chat_id=93769686&text='.$khar.$text);
 		$arr = explode(" ", $text);
-	if($result['message']['from']['id']=="121259997"&&rand(1,25)==12)
+
+	if($result['message']['from']['username']=="Theonlyonetostand" && strpos($text, '...') !== false)
+	{
+		$text_reply = 'پورپور زر مفت نزن';
+		$reply=$result['message']['message_id'];
+	}
+	else if($result['message']['from']['id']=="121259997"&&rand(1,25)==12)
 	{
 		$text_reply = 'وز زر مفت نزن';
 		$reply=$result['message']['message_id'];
 	}
-	if(strpos($text, 'pnanegan') !== false || strpos($text, 'Pnanegan') !== false || strpos($text, 'PNANEGAN') !== false)
+	else if(strpos($text, 'pnanegan') !== false || strpos($text, 'Pnanegan') !== false || strpos($text, 'PNANEGAN') !== false || strpos($text, 'پیننگان') !== false )
 		$text_reply=urlencode('<i> پیننگان پسر شود'.chr(10).'پی تو پسر نمی شود</i>');
 	else if($result['message']['sticker']['emoji']=='✅' || strpos($text, 'احمدی نژاد')!== false)
 	{
@@ -207,6 +214,11 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'بر سر کلمات فارسی تنوین می گذارند. بی حیاها';
 		$reply=$result['message']['message_id'];
 	}// تنوین
+	else if(strpos($text, 'ظبط') !== false)
+	{
+		$text_reply = 'غلط املایی شما <i>ضبط</i> شد.';
+		$reply=$result['message']['message_id'];
+	}// عجالتا
 	else if(strpos($text, 'اجالتن') !== false || strpos($text, 'اجالتا') !== false)
 	{
 		$text_reply = '*عجالتا';
@@ -247,9 +259,9 @@ $string = json_decode(file_get_contents('php://input'));
 		$text_reply = 'این غلط املایی <i>توجیه</i> ناپذیره';
 		$reply=$result['message']['message_id'];
 	}// توجیه
-	/*else if(strpos($text, 'MPT') !== false || strpos($text, 'M.P.T.') !== false || strpos($text, 'ام پی تی') !== false || strpos($text, 'ام.پی.تی') !== false)
+	else if(strpos($text, 'MPT') !== false || strpos($text, 'M.P.T.') !== false || strpos($text, 'ام پی تی') !== false || strpos($text, 'ام.پی.تی') !== false)
 	{
-		$text_reply = '#کریمیـقدوسی';
+		$text_reply = 'Achievement Unlocked: Karimi Ghoddoosi		';
 		$reply=$result['message']['message_id'];
 	}// جواد	
 	else if(strpos($text, 'صگ') !== false)
