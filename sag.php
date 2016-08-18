@@ -169,7 +169,7 @@ $string = json_decode($khar);
 		}
 		$reply=$result['message']['message_id'];
 	}//مظلومترین رئیس جمهور
-	else if(strpos($text, 'انتخاب واحد') !== false)
+	else if(strpos($text, 'واحد') !== false && strpos($text, 'انتخاب') !== false || strpos($text, 'ارائه') !== false || strpos($text, 'نمودار') !== false)
 	{
 		$text_reply = 'خرخون دو عالم الان چه وقت انتخاب واحده مگه میخوای سه ساله کنی';
 		$reply=$result['message']['message_id'];
