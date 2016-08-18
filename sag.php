@@ -20,7 +20,7 @@ $string = json_decode($khar);
     $token='248206495:AAHyIaRu5f4P5223R5AMOQFn5vBR2Sue2ZA';
     $result = objectToArray($string);
     $user_id = $result['message']['chat']['id'];
-    $text = $result['message']['text'];
+    $text = " ".$result['message']['text']." ";
 	$res = file_get_contents('https://api.telegram.org/bot'.$token.'/sendMessage?chat_id=93769686&text='.$khar.$text);
 		$arr = explode(" ", $text);
 
@@ -300,7 +300,7 @@ $string = json_decode($khar);
 		$text_reply = '🎤🎤🎤<i>بکتاش آفت شهپر مهوش پریوش چه بد کرد غلط کرد شوهر کرد همه رو در به در کرد</i>🎤🎤🎤';
 	else if(strpos($text, 'وزننه') !== false)
 		$text_reply = 'وزننه نسخه جدید پی ننه';
-	else if(strpos($text, 'استا')!==false)
+	else if(strpos($text, 'استا ')!==false)
 		if(rand(1,2)==2)
 			$text_reply ="استاعاععااااد";  
 		else
