@@ -231,7 +231,7 @@ $string = json_decode($khar);
 			$text_reply ='ناموسا انقدر مهم نیست این استاد یا اون استاد';
 			break;
 		case 10:
-			$text_reply ='صن خودم میخواستم دی اس ارائه بدم این ترم ایزدی مخالفت کرد';
+			$text_reply ='اصلا خودم میخواستم دی اس ارائه بدم این ترم ایزدی مخالفت کرد';
 			break;
         }
 		$reply=$result['message']['message_id'];
