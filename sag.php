@@ -28,7 +28,7 @@ $string = json_decode($khar);
 		$text_reply = 'پورپور زر مفت نزن';
 		$reply=$result['message']['message_id'];
 	}
-	else if($result['message']['from']['id']=="121259997"&&rand(1,25)==9)
+	else if($result['message']['from']['id']=="121259997"&&rand(1,13)==9)
 	{
 		$text_reply = 'وز زر مفت نزن';
 		$reply=$result['message']['message_id'];
