@@ -28,7 +28,7 @@ $string = json_decode($khar);
 		$text_reply = 'پورپور زر مفت نزن';
 		$reply=$result['message']['message_id'];
 	}
-	else if($result['message']['from']['id']=="121259997"&&rand(1,25)==2)
+	else if($result['message']['from']['id']=="121259997"&&rand(1,25)==9)
 	{
 		$text_reply = 'وز زر مفت نزن';
 		$reply=$result['message']['message_id'];
@@ -184,7 +184,20 @@ $string = json_decode($khar);
 		$reply=$result['message']['message_id'];
 	}
 	else if (strpos($text, 'سربازی') !== false && strpos($text, 'آزاد') !== false ){
-		$text_reply = 'من خودم ترم پیش با سربازی آزاد داشتم انصافا خوب درس میداد';
+		switch(mt_rand(1,4)){
+	    case 1:
+		    $text_reply = 'من خودم ترم پیش با سربازی آزاد داشتم انصافا خوب درس میداد';
+		    break;
+		case 2:
+		    $text_reply = 'جالبه بدونین سربازی آزاد و اسدی در حقیقت با هم برادرند ولی نام فامیلیشون فرق داره!';
+		    break;
+		case 3:
+		    $text_reply = 'من ترم پیش با اسدی داشتم انصافا خوب درس میداد';
+		    break;
+		case 4:
+		    $text_reply = 'من ترم پیش اصلا ساختار زبان نداشتم حرفاییم که تا الان زدم خالی بندی بود';
+		    break;
+		}
 		$reply=$result['message']['message_id'];
 	}
 	else if (strpos($text, 'جم') !== false && strpos($text, 'زاد') !== false || strpos($text, 'قدسی') !== false || strpos($text, 'دی اس') !== false ){
@@ -192,7 +205,7 @@ $string = json_decode($khar);
 		switch(mt_rand(1,6)){
 	else if (strpos($text, 'جم') !== false && strpos($text, 'زاد') !== false || strpos($text, 'قدسی') !== false || strpos($text, 'دی اس') !== false ){
 		$text_reply = 'به نظر من دی اس رو ';
-		switch(mt_rand(1,6)){
+		switch(mt_rand(1,10)){
 		case 1:
 			$text_reply.='با قدسی بردارین ملت راضی بودن';  
 			break;
@@ -211,12 +224,24 @@ $string = json_decode($khar);
 		case 6:
 			$text_reply.='صبر کنید یه استاد جدید به زودی ارائه میده';
 			break;
+		case 7:
+			$text_reply ='من دروغ نباشه پسر دکتر قدسیم لطفن با پدرم بردارید';
+			break;
+		case 8:
+			$text_reply ='شعار هرچی مرده جمزاد برمیگرده';
+			break;
+		case 9:
+			$text_reply ='ناموسا انقدر مهم نیست این استاد یا اون استاد';
+			break;
+		case 10:
+			$text_reply ='صن خودم میخواستم دی اس ارائه بدم این ترم ایزدی مخالفت کرد';
+			break;
         }
 		$reply=$result['message']['message_id'];
 	}
 	else if(strpos($text, ' بزار') !== false)
 	{
-		$text_reply = 'بذار*';
+		$text_reply = 'بذار* یعنی ازدست تو یکی به تیمارستان امین آباد پناه بردم! روانیم کردی';
 		$reply=$result['message']['message_id'];
 	}
 	else if(strpos($text, 'میزار') !== false||strpos($text, 'می زار') !== false)
@@ -251,7 +276,7 @@ $string = json_decode($khar);
 	}// بارگذار
 	else if(strpos($text, ' گاها') !== false || strpos($text, ' گاهن') !== false || strpos($text, 'خواهشن') !== false || strpos($text, ' خواهشا ') !== false || strpos($text, ' دومن ') !== false || strpos($text, ' سومن ') !== false|| strpos($text, 'ناچارا') !== false || strpos($text, 'ناچارن') !== false)
 	{
-		$text_reply = 'بر سر کلمات فارسی تنوین می گذارند. بی حیاها';
+		$text_reply = 'آخه بی سواد کلمه فارسی تنوین میگیره؟؟زبان فارسی ۱ پاس نکردی مگه؟تو باید بری نهضت سوادآموزی اکابر شبانه';
 		$reply=$result['message']['message_id'];
 	}// تنوین
 	else if(strpos($text, 'ناموسن') !== false || strpos($text, 'دقیقن') !== false || strpos($text, 'قطعن') !== false || strpos($text, 'اصلن') !== false || strpos($text, 'اصن') !== false || strpos($text, 'رسمن') !== false || strpos($text, 'عمومن') !== false || strpos($text, 'عمرن') !== false || strpos($text, 'کلن') !== false || strpos($text, 'حقیقتن') !== false || strpos($text, 'واقعن') !== false || strpos($text, 'فعلن') !== false || strpos($text, 'مستقیمن') !== false || strpos($text, 'واقن') !== false || strpos($text, 'قطعن') !== false || strpos($text, 'ضمنن') !== false || strpos($text, 'بدیهتن') !== false || strpos($text, 'قاعدتن') !== false || strpos($text, 'لطفن') !== false || strpos($text, 'حتمن') !== false || strpos($text, 'جدن') !== false)
@@ -414,7 +439,23 @@ $string = json_decode($khar);
 		}*/
 		else
 		{
-			$text_reply = '';
+            $r = mt_rand(1, 150);
+            if ($r == 37){
+                $text_reply = 'خانم محترم این گروه جای این حرفا نیست';      
+            }
+            if ($r == 54){
+                $text_reply = 'آقای محترم این گروه جای این حرفا نیست';      
+            }
+            if ($r == 99){
+                $text_reply = 'نذار بگم شما تا دیروز لنگ ۲۵۰۰ کرایه تاکسیت بودی‌آخرشم از من قرض گرفتی حالا اومدی اینجا فاز انتلکت برداشتی';
+            }
+            if ($r == 99){
+                $text_reply = 'نذار بگم شما تا دیروز لنگ ۲۵۰۰ کرایه تاکسیت بودی‌آخرشم از من قرض گرفتی حالا اومدی اینجا فاز انتلکت برداشتی';
+            }
+            if ($r == 136){
+                $text_reply = 'منظورتو دقیق متوجه نشدم میشه بیشتر توضیح بدی؟';      
+            }
+			/*$text_reply = '';
 			if(rand(1,400)==2)
 			{
 			$text_reply = $result['message']['from']['first_name'].' chert nagoo';
@@ -426,7 +467,7 @@ $string = json_decode($khar);
 			$res = file_get_contents($url);
 			$text_reply = urlencode("This message is generated randomly to stop nonsensical stultiloquence.".chr(10)."For more information, contact gmail@somag.be");
 			$reply='';
-			}
+			}*/
 		}
 	/*}*/
     $url = 'https://api.telegram.org/bot'.$token.'/sendMessage?chat_id='.$user_id;
