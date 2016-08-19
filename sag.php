@@ -371,13 +371,14 @@ $string = json_decode($khar);
 		$text_reply = '🎤🎤🎤<i>بکتاش آفت شهپر مهوش پریوش چه بد کرد غلط کرد شوهر کرد همه رو در به در کرد</i>🎤🎤🎤';
 	else if(strpos($text, 'وزننه') !== false)
 		$text_reply = 'وزننه نسخه جدید پی ننه';
-	else if(strpos($text, ' استا')!==false&&$user_id!="-1001057108296"){
-		switch(rand(1,3)){
+	else if(strpos($text, ' استا')!==false{
+		switch(rand(1,10)){
 		case 1:
 			$text_reply ="استاااوووود";  
 		    break;
 		case 2:
 			$text_reply ="نام نامی استاد رو با وضو ذکر کنید";
+			$reply=$result['message']['message_id'];
 			break;
 		case 3:
 		    $text_reply = "استااعاععاعاد";
@@ -392,7 +393,7 @@ $string = json_decode($khar);
 		else	
 			$text_reply ="خدا به زمین گرم بزنتت";
 	}
-	else if($result['message']['from']['username']=="aryakowsar" || $result['message']['from']['username']=="A_H_P_A"|| $result['message']['from']['username']=="kianoosh76")
+	else if($result['message']['from']['username']=="aryakowsary" || $result['message']['from']['username']=="A_H_P_A"|| $result['message']['from']['username']=="kianoosh76")
 	{
 		if(strpos($text,'حرف دهنتو بفهم سماق')!==false || strpos($text,'حرف دهنتو بفهم')!==false)
 	      		$text_reply = 'ببخشید، استغفار می کنم';  
