@@ -384,7 +384,7 @@ $string = json_decode($khar);
 		else	
 			$text_reply ="خدا به زمین گرم بزنتت";
 	}
-	else if($result['message']['from']['username']=="aryakowsary" || $result['message']['from']['username']=="A_H_P_A"|| $result['message']['from']['username']=="kianoosh76")
+	else if($result['message']['from']['username']=="aryakowsar" || $result['message']['from']['username']=="A_H_P_A"|| $result['message']['from']['username']=="kianoosh76")
 	{
 		if(strpos($text,'حرف دهنتو بفهم سماق')!==false || strpos($text,'حرف دهنتو بفهم')!==false)
 	      		$text_reply = 'ببخشید، استغفار می کنم';  
@@ -446,12 +446,10 @@ $string = json_decode($khar);
             if ($r == 99){
                 $text_reply = 'نذار بگم شما تا دیروز لنگ ۲۵۰۰ کرایه تاکسیت بودی‌آخرشم از من قرض گرفتی حالا اومدی اینجا فاز انتلکت برداشتی';
             }
-            if ($r == 99){
-                $text_reply = 'نذار بگم شما تا دیروز لنگ ۲۵۰۰ کرایه تاکسیت بودی‌آخرشم از من قرض گرفتی حالا اومدی اینجا فاز انتلکت برداشتی';
-            }
             if ($r == 136){
                 $text_reply = 'منظورتو دقیق متوجه نشدم میشه بیشتر توضیح بدی؟';      
             }
+						$reply=$result['message']['message_id'];
 			/*$text_reply = '';
 			if(rand(1,400)==2)
 			{
