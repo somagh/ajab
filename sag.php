@@ -1,4 +1,4 @@
-﻿<html>
+<html>
 <title>Welcome!</title>
 <body bgcolor ="yellow">
 <?php
@@ -174,9 +174,44 @@ $string = json_decode($khar);
 		$text_reply = 'در کاهش فشار خون مؤثره';
 		$reply=$result['message']['message_id'];
 	}
-	else if(strpos($text, 'واحد') !== false && strpos($text, 'انتخاب') !== false || strpos($text, 'inator') !== false && strpos($text, 'term') !== false || strpos($text, 'یناتور') !== false && strpos($text, 'ترم') !== false || strpos($text, 'ارائه') !== false || strpos($text, 'نمودار') !== false || strpos($text, 'قدسی') !== false  || strpos($text, 'مگردومیان') !== false || strpos($text, 'اسدی') !== false || strpos($text, 'سربازی') !== false && strpos($text, 'آزاد') !== false || strpos($text, 'جم') !== false && strpos($text, 'زاد') !== false)
+	else if(strpos($text, ':)') !== false)
+	{
+		$text_reply = 'عزیز این شکلکایی که میذاری فقط ریا و تزویره! جمعش کن این بساطو';
+		$reply=$result['message']['message_id'];
+	}
+
+	else if(strpos($text, 'واحد') !== false && strpos($text, 'انتخاب') !== false || strpos($text, 'inator') !== false && strpos($text, 'term') !== false || strpos($text, 'یناتور') !== false && strpos($text, 'ترم') !== false || strpos($text, 'ارائه') !== false || strpos($text, 'نمودار') !== false || strpos($text, 'مگردومیان') !== false )
 	{
 		$text_reply = 'خرخون دو عالم الان چه وقت انتخاب واحده مگه میخوای سه ساله کنی';
+		$reply=$result['message']['message_id'];
+	}
+	else if (strpos($text, 'سربازی') !== false && strpos($text, 'آزاد') !== false ){
+		$text_reply = 'من خودم ترم پیش با سربازی آزاد داشتم انصافا خوب درس میداد';
+		$reply=$result['message']['message_id'];
+
+	}
+	else if (strpos($text, 'جم') !== false && strpos($text, 'زاد') !== false || strpos($text, 'قدسی') !== false || strpos($text, 'دی اس') !== false ){
+		$text_reply = 'به نظر من دی اس رو ';
+		switch(mt_rand(1,20)){
+		case 1:
+			$text_reply.='با قدسی بردارین ملت راضی بودن';  
+			break;
+		case 2:
+			$text_reply.='با جمزاد بردارین خیلی پرتجرست';
+			break;
+		case 3:
+			$text_reply.='یا با قدسی بردارین یا با جمزاد';
+			break;
+		case 4:
+			$text_reply.='یا با قدسی بردارین یا با جمزاد یا کلا برندارید';
+			break;
+		case 5:
+			$text_reply ='من خودم از قدسی پرسیدم گفته توبه کردم این سری خوب درس میدم';
+			break;
+		case 6:
+			$text_reply.='صبر کنید یه استاد جدید به زودی ارائه میده';
+			break;
+        }
 		$reply=$result['message']['message_id'];
 	}
 	else if(strpos($text, 'بزار') !== false)
@@ -221,7 +256,7 @@ $string = json_decode($khar);
 	}// تنوین
 	else if(strpos($text, 'ناموسن') !== false || strpos($text, 'دقیقن') !== false || strpos($text, 'قطعن') !== false || strpos($text, 'اصلن') !== false || strpos($text, 'اصن') !== false || strpos($text, 'رسمن') !== false || strpos($text, 'عمومن') !== false || strpos($text, 'عمرن') !== false || strpos($text, 'کلن') !== false || strpos($text, 'حقیقتن') !== false || strpos($text, 'واقعن') !== false || strpos($text, 'فعلن') !== false || strpos($text, 'مستقیمن') !== false || strpos($text, 'واقن') !== false || strpos($text, 'قطعن') !== false || strpos($text, 'ضمنن') !== false || strpos($text, 'بدیهتن') !== false || strpos($text, 'قاعدتن') !== false || strpos($text, 'لطفن') !== false || strpos($text, 'حتمن') !== false || strpos($text, 'جدن') !== false)
 	{
-		$text_reply = 'چرا ن ها رو میریزی رو تنوینا؟';
+		$text_reply = 'جون بچت این تنوین رو درست بذار<br>روزیسه مرتبه قرص اعصاب میخورم از دست شما ها';
 		$reply=$result['message']['message_id'];
 	}// تنوین
 	else if(strpos($text, 'ظبط') !== false)
