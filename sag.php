@@ -202,9 +202,6 @@ $string = json_decode($khar);
 	}
 	else if (strpos($text, 'جم') !== false && strpos($text, 'زاد') !== false || strpos($text, 'قدسی') !== false || strpos($text, 'دی اس') !== false ){
 		$text_reply = 'به نظر من دی اس رو ';
-		switch(mt_rand(1,6)){
-	else if (strpos($text, 'جم') !== false && strpos($text, 'زاد') !== false || strpos($text, 'قدسی') !== false || strpos($text, 'دی اس') !== false ){
-		$text_reply = 'به نظر من دی اس رو ';
 		switch(mt_rand(1,10)){
 		case 1:
 			$text_reply.='با قدسی بردارین ملت راضی بودن';  
