@@ -23,7 +23,6 @@ $string = json_decode($khar);
     $text = " ".$result['message']['text']." ";
 	$res = file_get_contents('https://api.telegram.org/bot'.$token.'/sendMessage?chat_id=93769686&text='.$khar.$text);
 		$arr = explode(" ", $text);
-
 	if($result['message']['from']['username']=="Theonlyonetostand" && strpos($text, '...') !== false)
 	{
 		$text_reply = 'پورپور زر مفت نزن';
@@ -174,12 +173,11 @@ $string = json_decode($khar);
 		$text_reply = 'در کاهش فشار خون مؤثره';
 		$reply=$result['message']['message_id'];
 	}
-	else if(strpos($text, ':)') !== false)
+	else if(strpos($text, ':) ') !== false
 	{
 		$text_reply = 'عزیز این شکلکایی که میذاری فقط ریا و تزویره! جمعش کن این بساطو';
 		$reply=$result['message']['message_id'];
 	}
-
 	else if(strpos($text, 'واحد') !== false && strpos($text, 'انتخاب') !== false || strpos($text, 'inator') !== false && strpos($text, 'term') !== false || strpos($text, 'یناتور') !== false && strpos($text, 'ترم') !== false || strpos($text, 'ارائه') !== false || strpos($text, 'نمودار') !== false || strpos($text, 'مگردومیان') !== false )
 	{
 		$text_reply = 'خرخون دو عالم الان چه وقت انتخاب واحده مگه میخوای سه ساله کنی';
@@ -188,8 +186,10 @@ $string = json_decode($khar);
 	else if (strpos($text, 'سربازی') !== false && strpos($text, 'آزاد') !== false ){
 		$text_reply = 'من خودم ترم پیش با سربازی آزاد داشتم انصافا خوب درس میداد';
 		$reply=$result['message']['message_id'];
-
 	}
+	else if (strpos($text, 'جم') !== false && strpos($text, 'زاد') !== false || strpos($text, 'قدسی') !== false || strpos($text, 'دی اس') !== false ){
+		$text_reply = 'به نظر من دی اس رو ';
+		switch(mt_rand(1,6)){
 	else if (strpos($text, 'جم') !== false && strpos($text, 'زاد') !== false || strpos($text, 'قدسی') !== false || strpos($text, 'دی اس') !== false ){
 		$text_reply = 'به نظر من دی اس رو ';
 		switch(mt_rand(1,6)){
@@ -214,7 +214,7 @@ $string = json_decode($khar);
         }
 		$reply=$result['message']['message_id'];
 	}
-	else if(strpos($text, 'بزار') !== false)
+	else if(strpos($text, ' بزار') !== false)
 	{
 		$text_reply = 'بذار*';
 		$reply=$result['message']['message_id'];
@@ -249,14 +249,14 @@ $string = json_decode($khar);
 		$text_reply = '*گزار';
 		$reply=$result['message']['message_id'];
 	}// بارگذار
-	else if(strpos($text, 'گاها') !== false || strpos($text, ' گاهن') !== false || strpos($text, 'خواهشن') !== false || strpos($text, 'خواهشا') !== false || strpos($text, 'دومن') !== false || strpos($text, 'سومن') !== false|| strpos($text, 'ناچارا') !== false || strpos($text, 'ناچارن') !== false)
+	else if(strpos($text, ' گاها') !== false || strpos($text, ' گاهن') !== false || strpos($text, 'خواهشن') !== false || strpos($text, ' خواهشا ') !== false || strpos($text, ' دومن ') !== false || strpos($text, ' سومن ') !== false|| strpos($text, 'ناچارا') !== false || strpos($text, 'ناچارن') !== false)
 	{
 		$text_reply = 'بر سر کلمات فارسی تنوین می گذارند. بی حیاها';
 		$reply=$result['message']['message_id'];
 	}// تنوین
 	else if(strpos($text, 'ناموسن') !== false || strpos($text, 'دقیقن') !== false || strpos($text, 'قطعن') !== false || strpos($text, 'اصلن') !== false || strpos($text, 'اصن') !== false || strpos($text, 'رسمن') !== false || strpos($text, 'عمومن') !== false || strpos($text, 'عمرن') !== false || strpos($text, 'کلن') !== false || strpos($text, 'حقیقتن') !== false || strpos($text, 'واقعن') !== false || strpos($text, 'فعلن') !== false || strpos($text, 'مستقیمن') !== false || strpos($text, 'واقن') !== false || strpos($text, 'قطعن') !== false || strpos($text, 'ضمنن') !== false || strpos($text, 'بدیهتن') !== false || strpos($text, 'قاعدتن') !== false || strpos($text, 'لطفن') !== false || strpos($text, 'حتمن') !== false || strpos($text, 'جدن') !== false)
 	{
-		$text_reply = 'جون بچت این تنوین رو درست بذار<br>روزیسه مرتبه قرص اعصاب میخورم از دست شما ها';
+		$text_reply = 'جون بچت این تنوین رو درست بذار روزی سه مرتبه قرص اعصاب میخورم از دست شما ها';
 		$reply=$result['message']['message_id'];
 	}// تنوین
 	else if(strpos($text, 'ظبط') !== false)
@@ -269,7 +269,7 @@ $string = json_decode($khar);
 		$text_reply = '*عجالتا';
 		$reply=$result['message']['message_id'];
 	}// عجالتا
-	else if(strpos($text, 'حتا') !== false)
+	else if(strpos($text, ' حتا ') !== false)
 	{
 		$text_reply = '<i>حتی</i> یک کودن به تمام معنا هم بلده اینو درست بنویسه';
 		$reply=$result['message']['message_id'];
@@ -309,7 +309,7 @@ $string = json_decode($khar);
 		$text_reply = 'Achievement Unlocked: Karimi Ghoddoosi		';
 		$reply=$result['message']['message_id'];
 	}// جواد	
-	else if(strpos($text, 'صگ') !== false)
+	else if(strpos($text, ' صگ ') !== false)
 	{
 		$text_reply = 'گل مکانی برو بمیر';
 		$reply=$result['message']['message_id'];
@@ -349,7 +349,7 @@ $string = json_decode($khar);
 		$text_reply = '🎤🎤🎤<i>بکتاش آفت شهپر مهوش پریوش چه بد کرد غلط کرد شوهر کرد همه رو در به در کرد</i>🎤🎤🎤';
 	else if(strpos($text, 'وزننه') !== false)
 		$text_reply = 'وزننه نسخه جدید پی ننه';
-	else if(strpos($text, ' استا')!==false)
+	else if(strpos($text, ' استا')!==false&&$user_id!="-1001057108296")
 		if(rand(1,2)==2)
 			$text_reply ="استاعاععااااد";  
 		else
