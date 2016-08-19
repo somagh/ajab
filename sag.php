@@ -371,12 +371,13 @@ $string = json_decode($khar);
 		$text_reply = '🎤🎤🎤<i>بکتاش آفت شهپر مهوش پریوش چه بد کرد غلط کرد شوهر کرد همه رو در به در کرد</i>🎤🎤🎤';
 	else if(strpos($text, 'وزننه') !== false)
 		$text_reply = 'وزننه نسخه جدید پی ننه';
-	else if(strpos($text, ' استا')!==false{
+	else if(strpos($text, ' استا')!==false){
 		switch(rand(1,10)){
 		case 1:
 			$text_reply ="استاااوووود";  
 		    break;
 		case 2:
+		
 			$text_reply ="نام نامی استاد رو با وضو ذکر کنید";
 			$reply=$result['message']['message_id'];
 			break;
