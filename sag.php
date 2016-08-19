@@ -180,7 +180,7 @@ $string = json_decode($khar);
 	}
 	else if(strpos($text, 'واحد') !== false && strpos($text, 'انتخاب') !== false || strpos($text, 'inator') !== false && strpos($text, 'term') !== false || strpos($text, 'یناتور') !== false && strpos($text, 'ترم') !== false || strpos($text, 'ارائه') !== false || strpos($text, 'نمودار') !== false || strpos($text, 'مگردومیان') !== false )
 	{
-		$text_reply = 'خرخون دو عالم الان چه وقت انتخاب واحده مگه میخوای سه ساله کنی';
+		$text_reply = 'انتخاب واحد میکردیم وقتی انتخاب واحد مد نبود^__^';
 		$reply=$result['message']['message_id'];
 	}
 	else if ((strpos($text, 'سربازی') !== false && strpos($text, 'آزاد') !== false) || strpos($text, 'اسدی') !== false ){
@@ -371,11 +371,19 @@ $string = json_decode($khar);
 		$text_reply = '🎤🎤🎤<i>بکتاش آفت شهپر مهوش پریوش چه بد کرد غلط کرد شوهر کرد همه رو در به در کرد</i>🎤🎤🎤';
 	else if(strpos($text, 'وزننه') !== false)
 		$text_reply = 'وزننه نسخه جدید پی ننه';
-	else if(strpos($text, ' استا')!==false&&$user_id!="-1001057108296")
-		if(rand(1,2)==2)
-			$text_reply ="استاعاععااااد";  
-		else
-			$text_reply ="اسستاععععد";
+	else if(strpos($text, ' استا')!==false&&$user_id!="-1001057108296"){
+		switch(rand(1,3)){
+		case 1:
+			$text_reply ="استاااوووود";  
+		    break;
+		case 2:
+			$text_reply ="نام نامی استاد رو با وضو ذکر کنید";
+			break;
+		case 3:
+		    $text_reply = "استااعاععاعاد";
+		    break;
+		}
+	}
 	else if(strpos($text, 'خدا')!==false && strpos($text, 'لعنتت')!==false&& $result['message']['reply_to_message']['message_id']!=0)
 	{
 		$reply=$result['message']['reply_to_message']['message_id'];
