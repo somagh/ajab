@@ -183,7 +183,7 @@ $string = json_decode($khar);
 		$text_reply = 'خرخون دو عالم الان چه وقت انتخاب واحده مگه میخوای سه ساله کنی';
 		$reply=$result['message']['message_id'];
 	}
-	else if (strpos($text, 'سربازی') !== false && strpos($text, 'آزاد') !== false ){
+	else if ((strpos($text, 'سربازی') !== false && strpos($text, 'آزاد') !== false) || strpos($text, 'اسدی') !== false ){
 		switch(mt_rand(1,4)){
 	    case 1:
 		    $text_reply = 'من خودم ترم پیش با سربازی آزاد داشتم انصافا خوب درس میداد';
