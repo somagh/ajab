@@ -173,7 +173,7 @@ $string = json_decode($khar);
 		$text_reply = 'در کاهش فشار خون مؤثره';
 		$reply=$result['message']['message_id'];
 	}
-	else if(strpos($text, ':) ') !== false
+	else if(strpos($text, ':) ') !== false)
 	{
 		$text_reply = 'عزیز این شکلکایی که میذاری فقط ریا و تزویره! جمعش کن این بساطو';
 		$reply=$result['message']['message_id'];
