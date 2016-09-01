@@ -515,7 +515,7 @@ $string = json_decode($khar);
     $url .= '&text=' .$text_reply;
 	$url .= '&reply_to_message_id=' .$reply;
 	$url .= '&parse_mode=html';
-    $res = file_get_contents($url);
+  //  $res = file_get_contents($url);
 	?>
 </body>
 </html>
