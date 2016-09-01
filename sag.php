@@ -21,6 +21,7 @@ $string = json_decode($khar);
     $result = objectToArray($string);
     $user_id = $result['message']['chat']['id'];
     $text = " ".$result['message']['text']." ";
+    $text=str_replace("ي	","ی",$text);
     $arr = explode(" ", $text);
 	//$res = file_get_contents('https://api.telegram.org/bot'.$token.'/sendMessage?chat_id=93769686&text='.$khar.$text);
 	if($result['message']['from']['username']=="Theonlyonetostand" && strpos($text, '...') !== false)
@@ -32,7 +33,37 @@ $string = json_decode($khar);
 	{
 		$text_reply = 'وز زر مفت نزن';
 		$reply=$result['message']['message_id'];
+	}	
+        else if($result['message']['chat']['title']=="Nostalgy!!!" && ($result['message']['from']['username']=="Abbasposhtvan74" && mt_rand(1,5) == 2 || strpos($text, 'abbas') !== false && strpos($text, 'poshtvan') !== false || strpos($text, 'عباس') !== false && strpos($text, 'پشتوان') !== false))
+	{
+                switch(mt_rand(1,3)){
+		case 1:
+			$text_reply="تا خون در رگ ماست خمینی رهبر ماست";  
+			break;
+		case 2:
+			$text_reply="مرگ بر منافقین مزدور";
+			break;
+		case 3:
+			$text_reply="برو اسرائیل ای عنصر خائن به انقلاب";
+			break;
+                }
+		$reply=$result['message']['message_id'];
 	}
+        else if($result['message']['chat']['title']=="Nostalgy!!!" && ($result['message']['from']['firstname']=="Shahin" && $result['message']['from']['firstname']=="Rahimi" && mt_rand(1,5) == 2 || strpos($text, 'شاهین') !== false && strpos($text, 'رحیمی') !== false || strpos($text, 'shahin') !== false && strpos($text, 'rahimi') !== false))
+	{
+                switch(mt_rand(1,3)){
+		case 1:
+			$text_reply="دانشمند هسته ای";  
+			break;
+		case 2:
+			$text_reply="مملکتی که 20 میلیون جوان داشته باشد باید 20 میلیون تفنگدار داشته باشد و چنین مملکتی آسیب پذیر نیست.";
+			break;
+		case 3:
+			$text_reply="امید من به شما بچه دبستانی هاست.";
+			break;
+                }
+		$reply=$result['message']['message_id'];
+	} 
 	else if(strpos($text, 'pnanegan') !== false || strpos($text, 'Pnanegan') !== false || strpos($text, 'PNANEGAN') !== false || strpos($text, 'پیننگان') !== false )
 		$text_reply=urlencode('<i> پیننگان پسر شود'.chr(10).'پی تو پسر نمی شود</i>');
 	else if($result['message']['sticker']['emoji']=='✅' || strpos($text, 'احمدی نژاد')!== false || strpos($text, 'احمدي نژاد')!== false)
@@ -207,6 +238,10 @@ $string = json_decode($khar);
 		$text_reply = 'انتخاب واحد میکردیم وقتی انتخاب واحد مد نبود^__^';
 		$reply=$result['message']['message_id'];
 	}
+	else if(strpos($text, 'SSC') !== false || strpos($text, 'ssc') !== false || strpos($text, 'اس اس سی') !== false )
+	{
+		$text_reply = 'دست آورد های لیست SSC؟ تقریبا هیچ';
+	}
 	else if (((strpos($text, 'سربازی') !== false && strpos($text, 'آزاد') !== false) || strpos($text, 'اسدی') !== false )&& mt_rand(4)==1){
 		switch(mt_rand(1,4)){
 	    case 1:
@@ -260,11 +295,6 @@ $string = json_decode($khar);
         }
 		$reply=$result['message']['message_id'];
 	}
-	else if(strpos($text, 'معادلات') !== false)
-	{
-		$text_reply = 'هنوز خود دانشکده ارائه نداده میخوای بگی خیلی خرخونی؟';
-		$reply=$result['message']['message_id'];
-	}
 	else if(strpos($text, ' بزار') !== false)
 	{
 		$text_reply = 'بذار* یعنی ازدست تو یکی به تیمارستان امین آباد پناه بردم! روانیم کردی';
@@ -287,7 +317,7 @@ $string = json_decode($khar);
 	}// برگزار
 	else if(strpos($text, 'بگزار') !== false)
 	{
-		$text_reply = 'آران چته';
+		$text_reply = ':|';
 		$reply=$result['message']['message_id'];
 	}// برگزار
 	else if(strpos($text, 'کارگذار') !== false)
@@ -362,10 +392,10 @@ $string = json_decode($khar);
 	}// توجیه
 	else if(strpos($text, 'MPT') !== false || strpos($text, 'M.P.T.') !== false || strpos($text, 'ام پی تی') !== false || strpos($text, 'ام.پی.تی') !== false)
 	{
-		$text_reply = 'Achievement Unlocked: Karimi Ghoddoosi		';
+		$text_reply = 'استاد جواد کریمی قدوسی';
 		$reply=$result['message']['message_id'];
 	}// جواد	
-	else if(strpos($text, ' صگ ') !== false)
+	else if(strpos($text, ' صگ ') !== false || strpos($text, 'گل') !== false && strpos($text, 'مکانی') !== false)
 	{
 		$text_reply = 'گل مکانی برو بمیر';
 		$reply=$result['message']['message_id'];
@@ -515,7 +545,7 @@ $string = json_decode($khar);
     $url .= '&text=' .$text_reply;
 	$url .= '&reply_to_message_id=' .$reply;
 	$url .= '&parse_mode=html';
-  //  $res = file_get_contents($url);
+    $res = file_get_contents($url);
 	?>
 </body>
 </html>
