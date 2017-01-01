@@ -23,7 +23,7 @@ $string = json_decode($khar);
     $text = " ".$result['message']['text']." ";
     $text=str_replace("ي	","ی",$text);
     $arr = explode(" ", $text);
-	$res = file_get_contents('https://api.telegram.org/bot'.$token.'/sendMessage?chat_id=93769686&text='.$khar.$text);
+	//$res = file_get_contents('https://api.telegram.org/bot'.$token.'/sendMessage?chat_id=93769686&text='.$khar.$text);
 	if($result['message']['from']['username']=="Theonlyonetostand" && strpos($text, '...') !== false)
 	{
 		$text_reply = 'پورپور زر مفت نزن';
